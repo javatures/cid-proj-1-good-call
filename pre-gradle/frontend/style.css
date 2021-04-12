@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid blue;
+    padding: 1em;
+    color: blue;
+}
+
+.flex-child:first-child {
+    margin-right: 20px
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
