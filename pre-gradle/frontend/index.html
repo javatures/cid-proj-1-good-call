@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Project 1: A ghuD Full Stack Application</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ghuD Home Page</title>
+    <link rel="shortcut icon" type="image/jpg" href="resources-private/avatar-steve.jpg"/>
+    <script src="index.js"></script>
     <style>
         body {
             font-family: Anonymous Pro;
@@ -11,76 +14,89 @@
     </style>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <div>
-        <h1>
-            <span id="system">
-                ghuD
-            </span>
-        </h1>
-    </div>
+    <!--
 
-    <div>
-        <h2>Form</h2>
-    </div>
-    <form name="headspace" action="/test.html" target="blank" method="GET">
-        <div style="text-align: center;">
-            <input style="border: 2px solid red;" type="submit" value="submit" />
-        </div>
-        <br>
-        <br>
-        <div class="flex-container">
+        The commented code below is a standard login form
 
-            <div class="flex-child">
-                <h3>Morning</h3>
-                <label>TLDR:
-                    <input type="text" name="tldr" placeholder="hmm..." required />
-                </label>
-            </div>
-
-            <div class="flex-child">
-                <h3>Call</h3>
-                <label>TLDR:
-                    <input type="text" name="tldr" placeholder="hmm..." required />
-                </label>
-                <br>
-                <label>Purpose:
-                    <input type="text" name="purpose" placeholder="hmm..." required />
-                </label>
-            </div>
-
-        </div>
-    </form>
-
-    <div>
-        <h2>JavaScript Practice</h2>
-        <div class="objectCreation">
-            <h3>Object Creation</h3>
-            <div>
-                Declaration:
-                <code>
-                            var foo = {
-                                {bar: "value"},
-                                {nanny: 1},
-                            }
-                </code>
-            </div>
-            <div>
-                Constructor:
-                <code>
-                            var foo = Object();
-                            foo.bar = "value";
-                            foo.nanny = 1;
-                </code>
-            </div>
+    -->
+    <!-- <form action="dashboard.html" method="post">
+        <div class="img-container">
+            <img src="resources-private/avatar-steve.jpg" alt="avatar" class="avatar">
         </div>
 
-    </div>
+        <div class="container">
+            <label for="person"><b>ghuD Person</b></label>
+            <input type="text" placeholder="what's your name?" name="person" required>
 
-    <script src="index.js"></script>
+            <label for="password"><b>ghuD Password</b></label>
+            <input type="password" placeholder="what's your password? wait- don't tell me!" name="password" required>
 
+            <button type="submit">login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember">remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbutton">cancel</button>
+            <span class="forgot"><a href="#">forgot password</a></span>
+        </div>
+    </form> -->
+
+    <!-- 
+
+        the code below is a modal login form
+
+     -->
+
+     <div>
+        <span>
+            <h1>
+                Are You Ready To Get ghuD?
+            </h1>
+        </span>
+     </div>
+
+     <!-- button to open login form -->
+     <button onclick="document.getElementById('id01').style.display='block'">login</button>
+
+     <!-- the modal -->
+     <div id="id01" class="modal">
+
+        <!-- modal content -->
+        <form class="modal-content animate" action="/dashboard.html">
+            
+            <!-- avatar content -->
+            <div class="img-container">
+                <img src="resources-private/avatar-steve.jpg" alt="avatar" class="avatar">
+            </div>
+
+            <!-- login form inputs -->
+            <div class="container">
+
+                <span onclick="document.getElementById('id01').style.display='none'" class="close-modal-button" title="close modal">&times;</span>
+                
+                <label for="person"><b>ghuD Person</b></label>
+                <input type="text" placeholder="What's your name?" name="person" required>
+
+                <label for="password"><b>ghuD Password</b></label>
+                <input type="password" placeholder="What's your password? Wait- don't tell me!" name="password" required>
+
+                <button type="submit">login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">remember me
+                </label>    
+            </div>
+
+            <div class="container" style="background-color: #f1f1f1;">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbutton">cancel</button>
+                <span class="password"><a href="#">forgot password</a></span>
+            </div>
+        
+        </form>
+
+     </div>
 </body>
-
 </html>

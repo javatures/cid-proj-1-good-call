@@ -50,42 +50,106 @@ A Java 8 backend web API and ES6+ HTML/JS web interface with a PostgreSQL databa
 - [] Prepare a demonstration of functionality requirements through a browser
 - [] Prepare visual aides (slides) introducing the project requirements and features
 
-## Example: Expense Reimbursement System
-A web application for managing reimbursement ticket submissions and approvals between employees and their managers.
-
-### User stories
-- An Employee...
-    - [] can login
-    - [] can view the Employee Homepage
-    - [] can logout
-    - [] can submit a reimbursement request
-    - [] can upload an image of his/her receipt as part of the reimbursement request
-    - [] can view their pending reimbursement requests
-    - [] can view their resolved reimbursement requests
-    - [] can view their information
-    - [] can update their information
-    - [] receives an email when one of their reimbursement requests is resolved (optional)
-
-- A Manager...
-    - [] can login
-    - [] can view the Manager Homepage
-    - [] can logout
-    - [] can approve/deny pending reimbursement requests
-    - [] can view all pending requests from all employees
-    - [] can view images of the receipts from reimbursement requests
-    - [] can view all resolved requests from all employees and see which manager resolved it
-    - [] can view all Employees
-    - [] can view reimbursement requests from a single Employee
 
 `end Mehrab's notes`
 * * *
 
 ## User Stories
 
-- [ ] As a ghuD Person...
-  - [ ] I can login to my ghuD so that 
-  - [ ] I can view my Headspace so that
-  - [ ] I can logout of my ghuD so that
+- [ ] As a [ghuD Person](#person), I can...
+  - [ ] login to my [ghuD](#ghud) so that 
+  - [ ] view my [Headspace](#headspace) so that
+  - [ ] logout of my [ghuD](#ghud) so that
+  - [ ] submit a [Thought](#thought) so that
+  - [ ] upload a [Brain Freeze](#brain-freeze) so that I can build my Muse so that
+  - [ ] view an individual [Brain Freeze](#brain-freeze) so that
+  - [ ] view my [Muse](#muse)- my collection of [Brain Freezes](#brain-freeze) so that
+  - [ ] view my [Scoop](#scoop)- my story for the day so that
+  - [ ] can write my [Scoop](#scoop) so that
+  - [ ] receive an emailed [Scoop](#scoop) so that
+
+- [ ] As a ghuD Friend, I can...
+  - [ ] change my Perspective from Refelctive to Expressive so that
+  - [ ] change my Perspective from Expressive to Refelctive so that
+  - [ ] view my collection of Souls so that
+  - [ ] create a Vibe so that
+  - [ ] view all Vibes so that
+  - [ ] view a Brain Freeze of a Soul so that
+  - [ ] view a Wavelength of Vibes between myself and a Soul so that
+  - [ ] update a Vibe so that
+
+### Glossary
+
+### ghuD System
+
+A system for tackling the quotidian- the day-to-day data... for the day.
+Optimal in its most ethereal form- a simple mental construct.
+Think of all ghuD Technology as training wheels for ghuD Persons to eventually operate completely independent of external devices/constructs.
+
+#### Key Componenents Of A ghuD System:
+
+##### Frames Of Mind
+   1. Love
+   2. Live
+   3. Learn
+   4. Earn
+
+##### Headspace Locations
+   1. Top Of Mind
+   2. Front And Center
+   3. Bottom Line
+   4. Forgotten
+
+#### ghuD
+
+Great Heads Up Display- a tool to help one implement the ghuD System.
+A ghuD is meant to get ghuD Persons in, out and about- very simply and very quickly.
+Use it to get started, but don't be distracted from what truly matters- what is in front of you and behind the screen.
+
+##### Person
+
+Synonymous with a user, but ghuD Developers are people-first people, so person is preferred over user... to each their own.
+Important to note that the [Perspective](#perspective) here is [Reflective](#reflective).
+
+
+##### Headspace
+
+***Where the magic happens***
+
+May be likened to a [Kanban](https://g.co/kgs/RH6BEy) filled with [Thoughts](#thought)- consider using [Headspace Locations](#headspace-locations) as stages and [Frames Of Mind](#frames-of-mind) as lanes.
+It's a ghuD idea to keep this organized and full- but only enough so that one may end each day with it cleared.
+It's very important to keep the [Theory Of Constraints](https://g.co/kgs/KsBXz3) in mind.
+
+###### Suggested readings:
+
+- [The Phoenix Project](https://g.co/kgs/bWy9x7)
+- [The Goal](https://g.co/kgs/MK9D6Z)
+
+##### Thought
+
+May be likened to a task.
+These fill one's [Headspace](#headspace) until cleared- an experience of joy when done so, especially expeditiously.
+
+##### Brain Freeze
+
+A portrait of a [Soul](#soul)
+
+##### Muse
+
+A collection of [Brain Freezes](#brain-freeze)
+From [Wikipedia](https://simple.wikipedia.org/wiki/Muse): *The word muse is also sometimes used for a person who inspires somebody else, or any other type of inspiring object. Muse can also be used to describe one's creative thoughts, such as poetry or a musical composition.*
+
+##### Soul
+
+A person or Person that is not oneself.
+
+> [You don't *have* a soul, Docter. You *are* a soul. You *have* a body, temporarily.](https://www.goodreads.com/quotes/10682-you-don-t-have-a-soul-doctor-you-are-a-soul)
+
+##### Scoop
+
+A summary of your [Headspace](#headspace)
+
+##### Friend
 
 ## Tech Stack
 
