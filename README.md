@@ -4,16 +4,16 @@
 A Java 8 backend web API and ES6+ HTML/JS web interface with a PostgreSQL database. Submit a README.md with a proposal that matches as many requirements as manageable below. You may use the example proposal below for reference, or as your project itself.
 
 ### Tools & APIs
-- [] Agile User Stories
-- [] Java SE 8
-- [] Gradle
+- [x] Agile User Stories
+- [x] Java SE 8
+- [x] Gradle
 - [] JDBC
 - [] PostgreSQL
 - [] JavaEE Servlet
-- [] HTML/JS/CSS
+- [x] HTML/JS/CSS
 - [] AJAX/Fetch
 - [] JUnit
-- [] log4j or similar
+- [x] log4j or similar
 - [] Jest or similar JS testing framework
 - [] Optional:
     - [] Docker, Docker-Compose

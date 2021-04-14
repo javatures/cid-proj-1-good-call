@@ -9,7 +9,10 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'war'
 }
+
+// apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
 
 repositories {
     // Use MavenCentral for resolving dependencies.
@@ -40,10 +43,15 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'project.App'
+    mainClass = 'com.github.carlcidromero.project1.App'
 }
 
 tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
 }
+
+// gretty {
+//     httpPort = 8888
+//     contextPath = '/app'
+// }
