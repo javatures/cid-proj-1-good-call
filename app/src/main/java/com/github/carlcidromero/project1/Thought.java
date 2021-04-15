@@ -10,6 +10,9 @@ public class Thought {
         this.tldr = tldr;
     }
 
+    public Thought() {
+    }
+
     public int getId() {
         return id;
     }

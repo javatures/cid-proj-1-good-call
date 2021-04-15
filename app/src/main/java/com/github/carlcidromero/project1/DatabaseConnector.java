@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 public class DatabaseConnector {
 
     private final Logger log = LogManager.getLogger(this.getClass());
+    
     Properties properties = new Properties();
     Connection connection;
     String url;
@@ -44,8 +45,10 @@ public class DatabaseConnector {
             e.printStackTrace();
         } catch(IOException e) {
             log.error("Properties.load error: " + e.getMessage());
+            e.printStackTrace();
         } catch(SQLException e) {
             log.error("getConnection error: " + e.getMessage());
+            e.printStackTrace();
         }
 
     }
