@@ -14,43 +14,43 @@ import org.apache.logging.log4j.Logger;
 public class DatabaseConnector {
 
     private final Logger log = LogManager.getLogger(this.getClass());
-    
+
     Properties properties = new Properties();
     Connection connection;
     String url;
     String username;
     String password;
-    ThoughtDaoImpl thoughtDaoImpl;
+    ThoughtDao thoughtDao;
 
     public void connectToDatabase() {
 
         try {
             log.info("Connecting to database");
-            
+
             FileInputStream fileInputStream = new FileInputStream("app/src/main/resources/database.properties");
-    
+
             Properties databaseProperties = new Properties();
             databaseProperties.load(fileInputStream);
-    
+
             String url = databaseProperties.getProperty("url");
             String username = databaseProperties.getProperty("username");
             String password = databaseProperties.getProperty("password");
-    
+
             Connection connection = DriverManager.getConnection(url, username, password);
-            thoughtDaoImpl = new ThoughtDaoImpl(connection);
-    
+            thoughtDao = new ThoughtDaoImpl(connection);
+
             log.info("Connected to database");
-        } catch(FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             log.error("FileInputStream error: " + e.getMessage());
             e.printStackTrace();
-        } catch(IOException e) {
+        } catch (IOException e) {
             log.error("Properties.load error: " + e.getMessage());
             e.printStackTrace();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             log.error("getConnection error: " + e.getMessage());
             e.printStackTrace();
         }
 
     }
-    
+
 }

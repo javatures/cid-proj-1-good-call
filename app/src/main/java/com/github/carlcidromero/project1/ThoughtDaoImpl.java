@@ -15,6 +15,8 @@ public class ThoughtDaoImpl implements ThoughtDao {
 
     private final Logger log = LogManager.getLogger(this.getClass());
 
+    private List<Thought> thoughts = new ArrayList<>();
+
     Connection connection;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
@@ -24,35 +26,56 @@ public class ThoughtDaoImpl implements ThoughtDao {
         this.connection = connection;
     }
 
+    public ThoughtDaoImpl() {
+    }
+
     @Override
     public Thought generate(Thought thought) {
         
         sql = "INSERT INTO thought (tldr) VALUES (?);";
-
+        
         try {
             log.info("Generating thought");
-
+            
             preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, thought.getTldr());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 thought.setId(resultSet.getInt(1));
             }
-
+            
             log.info("Generated thought");
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             log.error("SQL Error: " + e.getMessage());
             e.printStackTrace();
         }
-
+        
         return thought;
+    }
+    
+    @Override
+    public Thought remember(int id) {
+
+        sql = "SELECT ? FROM thought;";
+
+        // try {
+        //     log.info("Remembering thought");
+
+        //     preparedStatement = connection.prepareStatement(sql);
+        // }
+
+        for(Thought thought : thoughts) {
+            if(thought.getId() == id)
+                return thought;
+        }
+        return null;
     }
 
     @Override
-    public List<Thought> remember() {
+    public List<Thought> rememberAll() {
 
-        List<Thought> thoughts = new ArrayList<>();
+        thoughts.clear();
 
         sql = "SELECT * FROM thought;";
 
@@ -61,7 +84,7 @@ public class ThoughtDaoImpl implements ThoughtDao {
 
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 Thought thought = new Thought();
                 thought.setId(resultSet.getInt("id"));
                 thought.setTldr(resultSet.getString("tldr"));
@@ -69,7 +92,7 @@ public class ThoughtDaoImpl implements ThoughtDao {
             }
 
             log.info("Remembered thoughts");
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             log.error("SQL Error: " + e.getMessage());
             e.printStackTrace();
         }
@@ -79,17 +102,17 @@ public class ThoughtDaoImpl implements ThoughtDao {
 
     @Override
     public void rethink(Thought thought) {
-        
+
     }
 
     @Override
-    public void forget(Thought thought) {
-        
+    public void forget(int id) {
+
     }
 
     @Override
     public void forgetAll() {
-        
+
     }
-    
+
 }
