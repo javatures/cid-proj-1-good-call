@@ -44,7 +44,7 @@ public class App {
         context.setResources(root);
         root.addPreResources(webResourceSet);
 
-
+        // thought servlet
         server.addServlet(host, "thoughtServlet", new HttpServlet() {
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -52,11 +52,38 @@ public class App {
                 resp.getWriter().println("Hello from thoughtServlet");
             }
         });
-
         context.addServletMappingDecoded("/thought", "thoughtServlet");
+
+        // login servlet
+        server.addServlet(host, "loginServlet", new HttpServlet() {
+            @Override
+            protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+                    throws ServletException, IOException {
+                String person, password;
+                if((person = req.getParameter("person")) != null && ((password = req.getParameter("password")) != null)) {
+                    // insert sql logic to pull user from database here
+                    if(person.equals("steve") && password.equals("password")) {
+                        resp.sendRedirect("/headspace");;
+                    } else {
+                        resp.sendRedirect("/api");
+                    }
+                }
+            }
+        });
+        context.addServletMappingDecoded("/login", "loginServlet");
+
+        // headspace servlet
+        server.addServlet(host, "headspaceServlet", new HttpServlet() {
+            @Override
+            protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+                    throws ServletException, IOException {
+                
+            }
+        });
+        context.addServletMappingDecoded("/headspace", "headspaceServlet");
+
         server.start();
         server.getServer().await();
-    
 
     }
 
