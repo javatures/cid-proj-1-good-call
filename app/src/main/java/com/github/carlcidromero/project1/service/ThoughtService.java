@@ -1,4 +1,4 @@
-package com.github.carlcidromero.project1;
+package com.github.carlcidromero.project1.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.carlcidromero.project1.RestRequest;
+import com.github.carlcidromero.project1.repository.ThoughtDao;
+import com.github.carlcidromero.project1.repository.ThoughtDaoImpl;
 
 public class ThoughtService extends HttpServlet {
     @Override

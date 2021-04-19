@@ -7,11 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.WebResourceSet;
+import org.apache.catalina.Wrapper;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
@@ -45,25 +47,43 @@ public class App {
         root.addPreResources(webResourceSet);
 
         // thought servlet
-        server.addServlet(host, "thoughtServlet", new HttpServlet() {
+        Wrapper thoughtServlet = server.addServlet(host, "thoughtServlet", new HttpServlet() {
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp)
                     throws ServletException, IOException {
-                resp.getWriter().println("Hello from thoughtServlet");
+
+                // login authorization
+                HttpSession session = req.getSession();
+                String person = (String) session.getAttribute("person");
+                if (person != null && person.equals("steve")) {
+                    resp.getWriter().println("Welcome Steve");
+                } else {
+                    person = getInitParameter("person");
+                    resp.getWriter().println("Welcome " + person);
+                }
             }
         });
         context.addServletMappingDecoded("/thought", "thoughtServlet");
+        thoughtServlet.addInitParameter("person", "anonymous");
+        
 
         // login servlet
         server.addServlet(host, "loginServlet", new HttpServlet() {
             @Override
             protected void doPost(HttpServletRequest req, HttpServletResponse resp)
                     throws ServletException, IOException {
+
                 String person, password;
-                if((person = req.getParameter("person")) != null && ((password = req.getParameter("password")) != null)) {
+
+                // login authenticaion
+                if ((person = req.getParameter("person")) != null
+                        && ((password = req.getParameter("password")) != null)) {
                     // insert sql logic to pull user from database here
-                    if(person.equals("steve") && password.equals("password")) {
-                        resp.sendRedirect("/headspace");;
+                    if (person.equals("steve") && password.equals("password")) {
+                        HttpSession session = req.getSession();
+                        session.setAttribute("person", person);
+                        resp.getWriter().println("ghuD");
+                        ;
                     } else {
                         resp.sendRedirect("/api");
                     }
@@ -77,7 +97,7 @@ public class App {
             @Override
             protected void doPost(HttpServletRequest req, HttpServletResponse resp)
                     throws ServletException, IOException {
-                
+
             }
         });
         context.addServletMappingDecoded("/headspace", "headspaceServlet");

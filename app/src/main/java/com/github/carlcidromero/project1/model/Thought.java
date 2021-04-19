@@ -1,4 +1,4 @@
-package com.github.carlcidromero.project1;
+package com.github.carlcidromero.project1.model;
 
 public class Thought {
 

@@ -8,6 +8,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.github.carlcidromero.project1.repository.ThoughtDao;
+import com.github.carlcidromero.project1.repository.ThoughtDaoImpl;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

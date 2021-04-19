@@ -1,6 +1,10 @@
-package com.github.carlcidromero.project1;
+package com.github.carlcidromero.project1.repository;
 
 import java.util.List;
+
+import com.github.carlcidromero.project1.model.Thought;
+
+
 
 public interface ThoughtDao {
 
