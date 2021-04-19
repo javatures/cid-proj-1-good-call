@@ -3,11 +3,6 @@ DROP DATABASE IF EXISTS ghud;
 
 CREATE DATABASE ghud;
 
-CREATE TABLE thought (
-    id SERIAL PRIMARY KEY,
-    tldr TEXT NOT NULL
-);
-
 CREATE TABLE soul (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
@@ -25,42 +20,30 @@ CREATE TABLE vibe (
             ON DELETE CASCADE
 );
 
-CREATE TABLE headspace (
+CREATE TABLE thought (
     id SERIAL PRIMARY KEY,
-    thought_id INT NOT NULL,
+    tldr TEXT NOT NULL,
     vibe_id INT,
-    location TEXT NOT NULL
+    frame TEXT NOT NULL
         CHECK (
             (location = 'love') or
             (location = 'live') or
             (location = 'learn') or
             (location = 'earn')
         ),
-    frame TEXT NOT NULL
+    location TEXT NOT NULL
         CHECK (
             (frame = 'top of mind') or
             (frame = 'front and center') or
             (frame = 'bottom line')
         ),
-
-    CONSTRAINT fk_headspace_thought
-        FOREIGN KEY(thought_id)
-            REFERENCES thought(id)
-            ON DELETE CASCADE,
     
-    CONSTRAINT fk_headspace_vibe
+    CONSTRAINT fk_thought_vibe
         FOREIGN KEY(vibe_id)
             REFERENCES vibe(id)
             ON DELETE CASCADE
+    
 );
-
-INSERT INTO thought (tldr)
-    VALUES
-        ('gotta do my taxes'),
-        ('finish project1'),
-        ('finish been saiyan song'),
-        ('finish peace of pi song')
-;
 
 INSERT INTO soul (name)
     VALUES
@@ -70,7 +53,16 @@ INSERT INTO soul (name)
         ('steve')
 ;
 
-INSERT INTO headspace (thought_id, location, frame)
+INSERT INTO vibe (soul_id, tldr, purpose)
     VALUES
-        (1, 'live', 'top of mind')
+        (2, 'when can we regroup on deliverables?', 'get project back on track'),
+        (1, 'how did recording session go?', 'keep project moving')
+;
+
+INSERT INTO thought (tldr, vibe_id, location, frame)
+    VALUES
+        ('gotta do my taxes',, 'bottom line', 'earn'),
+        ('finish project1',, 'front and center', 'learn'),
+        ('finish been saiyan song', 1, 'front and center', 'learn'),
+        ('finish peace of pi song', 2, 'front and center', 'learn')
 ;

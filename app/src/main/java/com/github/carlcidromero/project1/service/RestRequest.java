@@ -1,4 +1,4 @@
-package com.github.carlcidromero.project1;
+package com.github.carlcidromero.project1.service;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 
 public class RestRequest {
-    private Pattern regExThoughtAll = Pattern.compile("/thought");
-    private Pattern regExThoughtId = Pattern.compile("/thought/([0-9]*)");
+    private Pattern regExThoughtAll = Pattern.compile("/thought2");
+    private Pattern regExThoughtId = Pattern.compile("/thought2/([0-9]*)");
 
     private int id;
 

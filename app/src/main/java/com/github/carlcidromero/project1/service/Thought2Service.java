@@ -9,35 +9,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.carlcidromero.project1.RestRequest;
 import com.github.carlcidromero.project1.repository.ThoughtDao;
 import com.github.carlcidromero.project1.repository.ThoughtDaoImpl;
 
-public class ThoughtService extends HttpServlet {
+public class Thought2Service extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-    {
-        PrintWriter printWriter = resp.getWriter();
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
         ThoughtDao thoughtDao = new ThoughtDaoImpl();
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
             RestRequest restRequest = new RestRequest(req.getPathInfo());
-            
             int id = restRequest.getId();
 
-            if(id == 0) {
-                printWriter.println(objectMapper.writeValueAsString(thoughtDao.rememberAll()));
+            if (id == 0) {
+                out.println(objectMapper.writeValueAsString(thoughtDao.rememberAll()));
             } else {
-                printWriter.println(objectMapper.writeValueAsString(thoughtDao.remember(id)));
+                out.println(objectMapper.writeValueAsString(thoughtDao.remember(id)));
             }
         } catch (ServletException e) {
             resp.setStatus(400);
             resp.resetBuffer();
             e.printStackTrace();
-            printWriter.println(e);
+            out.println(e);
         }
-        printWriter.close();
+        out.close();
 
     }
 }

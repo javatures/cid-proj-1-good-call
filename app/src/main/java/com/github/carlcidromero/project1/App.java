@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.github.carlcidromero.project1.service.Thought2Service;
+
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.WebResourceRoot;
@@ -27,7 +29,7 @@ public class App {
         log.info("Embedding Tomcat server");
         Tomcat server = new Tomcat();
         int port = 8080;
-        String host = "/api";
+        String host = "/project1";
 
         server.getConnector();
         server.setPort(port);
@@ -45,6 +47,9 @@ public class App {
 
         context.setResources(root);
         root.addPreResources(webResourceSet);
+
+        server.addServlet(host, "thought2Servlet", Thought2Service.class.getName());
+        context.addServletMappingDecoded("/api/v1/*", "thought2Servlet");
 
         // thought servlet
         Wrapper thoughtServlet = server.addServlet(host, "thoughtServlet", new HttpServlet() {
