@@ -78,10 +78,20 @@ public class DatabaseConnector {
     return vibes;
   }
 
-  List<Soul> souls = new ArrayList<>();
-  public List<Soul> touchSouls() {
+  public void sendVibe(Vibe vibe) {
     connectToDatabase();
-    souls = daoSoul.touchAll();
+    daoVibe.send(vibe);
+  }
+
+  List<Soul> souls = new ArrayList<>();
+  public List<Soul> observeSouls() {
+    connectToDatabase();
+    souls = daoSoul.observeAll();
     return souls;
+  }
+
+  public void touchSoul(Soul soul) {
+    connectToDatabase();
+    daoSoul.touch(soul);
   }
 }

@@ -8,25 +8,72 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-    <table id="thoughtTable"></table>
-    <form action="thought" method="POST">
-        <label for="tldr">tldr</label>
-        <br>
-        <input type="text" name="tldr" id="tldr" />
-        <br>
-        <label for="location">location</label>
-        <br>
-        <input type="text" name="location" id="location" />
-        <br>
-        <label for="frame">frame</label>
-        <br>
-        <input type="text" name="frame" id="frame" />
-        <br>
-        <input type="submit" value="contemplate">
-    </form>
-    <form action="logout" method="POST">
-        <input type="submit" value="logout" />
-    </form>
+    <h1>ghuD</h1>
+
+    <div>
+        <h2>Thoughts</h2>
+        <table id="thoughtTable"></table>
+
+        <h3>Contemplating</h3>
+        <form action="thought" method="POST">
+            <label for="tldr">tldr</label>
+            <br>
+            <input type="text" name="tldr" id="tldr" />
+            <br>
+            <label for="location">location</label>
+            <br>
+            <input type="text" name="location" id="location" />
+            <br>
+            <label for="frame">frame</label>
+            <br>
+            <input type="text" name="frame" id="frame" />
+            <br>
+            <input type="submit" value="contemplate">
+        </form>
+    </div>
+
+    <div>
+        <h2>Vibes</h2>
+        <table id="vibeTable"></table>
+
+        <h3>Sending</h3>
+        <form action="vibe" method="POST">
+            <label for="tldr">tldr</label>
+            <br>
+            <input type="text" name="tldr" id="tldr" />
+            <br>
+            <label for="soul">soul</label>
+            <br>
+            <input type="text" name="soul" id="soul" />
+            <br>
+            <label for="purpose">purpose</label>
+            <br>
+            <input type="text" name="purpose" id="purpose" />
+            <br>
+            <input type="submit" value="send">
+        </form>
+    </div>
+
+    <div>
+        <h2>Souls</h2>
+        <table id="soulTable"></table>
+
+        <h3>Touching</h3>
+        <form action="soul" method="POST">
+            <label for="name">name</label>
+            <br>
+            <input type="text" name="name" id="name" />
+            <br>
+            <input type="submit" value="touch">
+        </form>
+    </div>
+
+    <div>
+        <h2>ghuDbyes</h2>
+        <form action="logout" method="POST">
+            <input type="submit" value="bye" />
+        </form>
+    </div>
 </body>
-<script src="headspace.js"></script>
+<script src="index.js"></script>
 </html>

@@ -21,12 +21,26 @@ public class ControllerSoul extends HttpServlet {
     
     DatabaseConnector databaseConnector = new DatabaseConnector();
     List<Soul> souls = new ArrayList<>();
-    souls = databaseConnector.touchSouls();
+    souls = databaseConnector.observeSouls();
 
     ObjectMapper objectMapper = new ObjectMapper();
     String jsonString = objectMapper.writeValueAsString(souls);
     resp.setContentType("application/json");
     resp.getWriter().print(jsonString);
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+    DatabaseConnector databaseConnector = new DatabaseConnector();
+
+    String name = req.getParameter("name");
+
+    Soul soul = new Soul(0, name);
+
+    databaseConnector.touchSoul(soul);
+    resp.sendRedirect("headspace.html");
+
   }
   
 }

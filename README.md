@@ -38,7 +38,7 @@ Tools & APIs
 
 ## Functionality
 
-    - [] CRUD - Create, Read, Update, Delete
+    - [ ] CRUD - Create, Read, Update, Delete
     - [x] Web App dashboard interface
     - [x] Asynchronous interface updates
     - [x] Login - Authentication & Authorization
@@ -47,8 +47,8 @@ Tools & APIs
 
 ## Presentation
 
-    - [] Prepare a demonstration of functionality requirements through a browser
-    - [] Prepare visual aides (slides) introducing the project requirements and features
+    - [ ] Prepare a demonstration of functionality requirements through a browser
+    - [ ] Prepare visual aides (slides) introducing the project requirements and features
 
 ## User Stories
 
@@ -67,9 +67,9 @@ Tools & APIs
     As a ghuD Friend, I can...
         - [ ] change my Perspective from Refelctive to Expressive so that
         - [ ] change my Perspective from Expressive to Refelctive so that
-        - [ ] view my collection of Souls so that
-        - [ ] create a Vibe so that
-        - [ ] view all Vibes so that
+        - [x] view my collection of Souls so that
+        - [x] create a Vibe so that
+        - [x] view all Vibes so that
         - [ ] view a Brain Freeze of a Soul so that
         - [ ] view a Wavelength of Vibes between myself and a Soul so that
         - [ ] update a Vibe so that
@@ -79,7 +79,8 @@ Tools & APIs
 ### ghuD System
 
 A system for tackling the quotidian- the day-to-day data... for the day. Optimal in its most ethereal form- a simple mental construct. Think of all ghuD Technology as training wheels for ghuD Persons to eventually operate completely independent of external devices/constructs.
-Key Componenents Of A ghuD System:
+
+### Key Componenents Of A ghuD System:
 
 #### Frames Of Mind
 

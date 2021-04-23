@@ -1,8 +1,9 @@
 package com.github.carlcidromero.project1.model;
 
 public class Vibe {
+  
   private int id;
-  private Soul soul;
+  private int soulId;
   private String tldr;
   private String purpose;
 
@@ -12,6 +13,14 @@ public class Vibe {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public int getSoulId() {
+    return soulId;
+  }
+
+  public void setSoulId(int soulId) {
+    this.soulId = soulId;
   }
 
   public String getTldr() {
@@ -30,27 +39,19 @@ public class Vibe {
     this.purpose = purpose;
   }
 
-  public Soul getSoul() {
-    return soul;
+  public Vibe() {
   }
 
-  public void setSoul(Soul soul) {
-    this.soul = soul;
-  }
-
-  public Vibe(int id, Soul soul, String tldr, String purpose) {
+  public Vibe(int id, int soulId, String tldr, String purpose) {
     this.id = id;
-    this.soul = soul;
+    this.soulId = soulId;
     this.tldr = tldr;
     this.purpose = purpose;
   }
 
-  public Vibe() {
-  }
-
   @Override
   public String toString() {
-    return "Vibe [id=" + id + ", purpose=" + purpose + ", soul=" + soul + ", tldr=" + tldr + "]";
+    return "Vibe [id=" + id + ", purpose=" + purpose + ", soulId=" + soulId + ", tldr=" + tldr + "]";
   }
 
 }

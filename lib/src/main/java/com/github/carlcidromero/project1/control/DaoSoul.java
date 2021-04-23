@@ -6,6 +6,7 @@ import com.github.carlcidromero.project1.model.Soul;
 
 public interface DaoSoul {
 
-  List<Soul> touchAll();
+  List<Soul> observeAll();
+  void touch(Soul soul);
 
 }

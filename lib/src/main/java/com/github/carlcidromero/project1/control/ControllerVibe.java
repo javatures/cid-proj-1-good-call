@@ -30,4 +30,20 @@ public class ControllerVibe extends HttpServlet {
 
   }
 
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+    DatabaseConnector databaseConnector = new DatabaseConnector();
+
+    String tldr = req.getParameter("tldr");
+    int soulId = Integer.parseInt(req.getParameter("soul"));
+    String purpose = req.getParameter("purpose");
+
+    Vibe vibe = new Vibe(0, soulId, tldr, purpose);
+
+    databaseConnector.sendVibe(vibe);
+    resp.sendRedirect("headspace.html");
+
+  }
+
 }

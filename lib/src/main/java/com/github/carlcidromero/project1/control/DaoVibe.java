@@ -7,4 +7,5 @@ import com.github.carlcidromero.project1.model.Vibe;
 public interface DaoVibe {
 
   List<Vibe> feelAll();
+  void send(Vibe vibe);
 }
