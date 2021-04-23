@@ -2,7 +2,7 @@ package com.github.carlcidromero.project1.model;
 
 public class Thought {
     private int id;
-    private int vibeId;
+    private Vibe vibe;
     private String tldr;
     private String location;
     private String frame;
@@ -15,12 +15,12 @@ public class Thought {
         this.id = id;
     }
 
-    public int getVibeId() {
-        return vibeId;
+    public Vibe getVibe() {
+        return vibe;
     }
 
-    public void setVibeId(int vibeId) {
-        this.vibeId = vibeId;
+    public void setVibe(Vibe vibe) {
+        this.vibe = vibe;
     }
 
     public String getTldr() {
@@ -50,14 +50,6 @@ public class Thought {
     public Thought() {
     }
 
-    public Thought(int id, int vibeId, String tldr, String location, String frame) {
-        this.id = id;
-        this.vibeId = vibeId;
-        this.tldr = tldr;
-        this.location = location;
-        this.frame = frame;
-    }
-
     public Thought(int id, String tldr, String location, String frame) {
         this.id = id;
         this.tldr = tldr;
@@ -65,10 +57,18 @@ public class Thought {
         this.frame = frame;
     }
 
+    public Thought(int id, Vibe vibe, String tldr, String location, String frame) {
+        this.id = id;
+        this.vibe = vibe;
+        this.tldr = tldr;
+        this.location = location;
+        this.frame = frame;
+    }
+
     @Override
     public String toString() {
-        return "Thought [frame=" + frame + ", id=" + id + ", location=" + location + ", tldr=" + tldr + ", vibeId="
-                + vibeId + "]";
+        return "Thought [frame=" + frame + ", id=" + id + ", location=" + location + ", tldr=" + tldr + ", vibe=" + vibe
+                + "]";
     }
 
 }

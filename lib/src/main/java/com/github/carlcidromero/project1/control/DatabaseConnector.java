@@ -66,6 +66,11 @@ public class DatabaseConnector {
     return thoughts;
   }
 
+  public void contemplateThought(Thought thought) {
+    connectToDatabase();
+    daoThought.contemplate(thought);
+  }
+
   List<Vibe> vibes = new ArrayList<>();
   public List<Vibe> feelVibes() {
     connectToDatabase();

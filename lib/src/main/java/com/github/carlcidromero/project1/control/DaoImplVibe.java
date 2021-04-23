@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.carlcidromero.project1.model.Soul;
 import com.github.carlcidromero.project1.model.Vibe;
 
 public class DaoImplVibe implements DaoVibe {
@@ -27,8 +28,10 @@ public class DaoImplVibe implements DaoVibe {
       ResultSet resultSet = statement.executeQuery("SELECT * FROM vibe");
       while(resultSet.next()) {
         Vibe vibe = new Vibe();
+        Soul soul = new Soul();
         vibe.setId(resultSet.getInt("id"));
-        vibe.setSoulId(resultSet.getInt("soul_id"));
+        soul.setId(resultSet.getInt("soul_id"));
+        vibe.setSoul(soul);
         vibe.setTldr(resultSet.getString("tldr"));
         vibe.setPurpose(resultSet.getString("purpose"));
         vibes.add(vibe);

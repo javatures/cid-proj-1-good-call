@@ -29,5 +29,21 @@ public class ControllerThought extends HttpServlet {
         resp.getWriter().print(jsonString);
 
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+        DatabaseConnector databaseConnector = new DatabaseConnector();
+
+        String tldr = req.getParameter("tldr");
+        String location = req.getParameter("location");
+        String frame = req.getParameter("frame");
+
+        Thought thought = new Thought(0, tldr, location, frame);
+
+        databaseConnector.contemplateThought(thought);
+        resp.sendRedirect("headspace.html");
+
+    }
         
 }
