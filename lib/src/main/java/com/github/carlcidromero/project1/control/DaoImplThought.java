@@ -73,5 +73,21 @@ public class DaoImplThought implements DaoThought {
       e.printStackTrace();
     }
   }
+
+  @Override
+  public void forget(Thought thought) {
+    
+    try {
+      LOGGER.info("executing database delete");
+      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM thought WHERE id = ?");
+      preparedStatement.setInt(1, thought.getId());
+      preparedStatement.execute();
+      LOGGER.info("successfully executed database delete");
+    } catch(SQLException e) {
+      LOGGER.error("error while executing database delete: " + e.getMessage());
+      e.printStackTrace();
+    }
+    
+  }
   
 }

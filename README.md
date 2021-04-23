@@ -56,7 +56,8 @@ Tools & APIs
         - [x] login to my ghuD so that
         - [x] view my Headspace so that
         - [x] logout of my ghuD so that
-        - [x] submit a Thought so that
+        - [x] create a Thought so that
+        - [x] forget a Thought so that
         - [ ] upload a Brain Freeze so that I can build my Muse so that
         - [ ] view an individual Brain Freeze so that
         - [ ] view my Muse- my collection of Brain Freezes so that
@@ -69,6 +70,7 @@ Tools & APIs
         - [ ] change my Perspective from Expressive to Refelctive so that
         - [x] view my collection of Souls so that
         - [x] create a Vibe so that
+        - [ ] forget a Vibe so that
         - [x] view all Vibes so that
         - [ ] view a Brain Freeze of a Soul so that
         - [ ] view a Wavelength of Vibes between myself and a Soul so that

@@ -65,6 +65,10 @@ public class Thought {
         this.frame = frame;
     }
 
+    public Thought(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Thought [frame=" + frame + ", id=" + id + ", location=" + location + ", tldr=" + tldr + ", vibe=" + vibe

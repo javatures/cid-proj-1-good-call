@@ -71,6 +71,20 @@ public class DaoImplVibe implements DaoVibe {
     
   }
 
+  @Override
+  public void kill(Vibe vibe) {
 
+    try {
+      LOGGER.info("executing database delete");
+      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM vibe WHERE id = ?");
+      preparedStatement.setInt(1, vibe.getId());
+      preparedStatement.execute();
+      LOGGER.info("successfully executed database delete");
+    } catch(SQLException e) {
+      LOGGER.error("error while executing database delete: " + e.getMessage());
+      e.printStackTrace();
+    }
+
+  }
 
 }

@@ -8,4 +8,5 @@ public interface DaoVibe {
 
   List<Vibe> feelAll();
   void send(Vibe vibe);
+  void kill(Vibe vibe);
 }

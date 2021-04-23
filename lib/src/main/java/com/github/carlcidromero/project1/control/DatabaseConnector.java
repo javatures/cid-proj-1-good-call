@@ -71,6 +71,11 @@ public class DatabaseConnector {
     daoThought.contemplate(thought);
   }
 
+  public void forgetThought(Thought thought) {
+    connectToDatabase();
+    daoThought.forget(thought);
+  }
+
   List<Vibe> vibes = new ArrayList<>();
   public List<Vibe> feelVibes() {
     connectToDatabase();
@@ -81,6 +86,11 @@ public class DatabaseConnector {
   public void sendVibe(Vibe vibe) {
     connectToDatabase();
     daoVibe.send(vibe);
+  }
+
+  public void killVibe(Vibe vibe) {
+    connectToDatabase();
+    daoVibe.kill(vibe);
   }
 
   List<Soul> souls = new ArrayList<>();

@@ -11,25 +11,40 @@
     <h1>ghuD</h1>
 
     <div>
-        <h2>Thoughts</h2>
-        <table id="thoughtTable"></table>
+        <div>
+            <h2>Thoughts</h2>
+            <table id="thoughtTable"></table>
+            
+            <h3>Contemplating</h3>
+            <form action="thought" method="POST">
+                <label for="tldr">tldr</label>
+                <br>
+                <input type="text" name="tldr" id="tldr" />
+                <br>
+                <label for="location">location</label>
+                <br>
+                <input type="text" name="location" id="location" />
+                <br>
+                <label for="frame">frame</label>
+                <br>
+                <input type="text" name="frame" id="frame" />
+                <br>
+                <input type="submit" value="contemplate" />
+                <br>
+            </form>
+        </div>
 
-        <h3>Contemplating</h3>
-        <form action="thought" method="POST">
-            <label for="tldr">tldr</label>
-            <br>
-            <input type="text" name="tldr" id="tldr" />
-            <br>
-            <label for="location">location</label>
-            <br>
-            <input type="text" name="location" id="location" />
-            <br>
-            <label for="frame">frame</label>
-            <br>
-            <input type="text" name="frame" id="frame" />
-            <br>
-            <input type="submit" value="contemplate">
-        </form>
+        <div>
+            <h3>Forgetting</h3>
+            <form action="thought/delete" method="POST">
+                <label for="id">id</label>
+                <br>
+                <input type="text" name="id" id="id" />
+                <br>
+                <input type="submit" value="forget" />
+                <br>
+            </form>
+        </div>
     </div>
 
     <div>
@@ -50,7 +65,8 @@
             <br>
             <input type="text" name="purpose" id="purpose" />
             <br>
-            <input type="submit" value="send">
+            <input type="submit" value="send" />
+            <br>
         </form>
     </div>
 
@@ -65,6 +81,7 @@
             <input type="text" name="name" id="name" />
             <br>
             <input type="submit" value="touch">
+            <br>
         </form>
     </div>
 

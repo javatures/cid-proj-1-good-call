@@ -8,5 +8,6 @@ public interface DaoThought {
 
     List<Thought> rememberAll();
     void contemplate(Thought thought);
+    void forget(Thought thought);
     
 }
