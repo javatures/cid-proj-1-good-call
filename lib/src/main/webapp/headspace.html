@@ -1,96 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headspace</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-</head>
-<body>
-    <h1>ghuD</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet"> 
+        <link href="style.css" rel="stylesheet">
+        <title>Headspace</title>
+    </head>
+    <body>
 
-    <div>
-        <div>
-            <h2>Thoughts</h2>
-            <table id="thoughtTable"></table>
-            
-            <h3>Contemplating</h3>
-            <form action="thought" method="POST">
-                <label for="tldr">tldr</label>
-                <br>
-                <input type="text" name="tldr" id="tldr" />
-                <br>
-                <label for="location">location</label>
-                <br>
-                <input type="text" name="location" id="location" />
-                <br>
-                <label for="frame">frame</label>
-                <br>
-                <input type="text" name="frame" id="frame" />
-                <br>
-                <input type="submit" value="contemplate" />
-                <br>
-            </form>
+        <div id="row01" class="row pt-5 px-5">
+            <div class="col-md-5 offset-md-1">
+                <h1>Headspace</h1>
+            </div>
+            <div class="col-md-5 d-flex justify-content-end">
+                <h1>ghuD</h1>
+            </div>
         </div>
 
-        <div>
-            <h3>Forgetting</h3>
-            <form action="thought/delete" method="POST">
-                <label for="id">id</label>
-                <br>
-                <input type="text" name="id" id="id" />
-                <br>
-                <input type="submit" value="forget" />
-                <br>
-            </form>
+        <div class="row pb-5 px-5">
+            <div class="col-md-5"></div>
+            <div class="col-md-5 d-flex justify-content-end offset-md-1">
+                <form action="logout" method="POST">
+                    <input type="submit" value="bye" />
+                </form>
+            </div>
+        </div>
+
+        <div id="row02" class="row py-1 px-5">
+            <div class="col-md-4 d-flex bg-warning text-white">
+                <h2>Thoughts</h2>
+            </div>
+            <div class="col-md-4 d-flex bg-danger text-white">
+                <h2>Vibes</h2>
+            </div>
+            <div class="col-md-4 d-flex bg-primary text-white">
+                <h2>Souls</h2>
+            </div>
+        </div>
+
+            <div id="row03" class="row py-3 px-5">
+                <div class="col-md-4">
+                    <h3>Contemplating</h3>
+                    <table id="thoughtTable"></table>
+                    <form action="thought" method="POST">
+                        <label for="tldr">tldr</label>
+                        <br>
+                        <input type="text" name="tldr" id="tldr" />
+                        <br>
+                        <label for="location">location</label>
+                        <br>
+                        <input type="text" name="location" id="location" />
+                        <br>
+                        <label for="frame">frame</label>
+                        <br>
+                        <input type="text" name="frame" id="frame" />
+                        <br>
+                        <input type="submit" value="contemplate thought" />
+                        <br>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <table id="vibeTable"></table>
+                    <h3>Sending</h3>
+                    <form action="vibe" method="POST">
+                        <label for="tldr">tldr</label>
+                        <br>
+                        <input type="text" name="tldr" id="tldr" />
+                        <br>
+                        <label for="soul">soul</label>
+                        <br>
+                        <input type="text" name="soul" id="soul" />
+                        <br>
+                        <label for="purpose">purpose</label>
+                        <br>
+                        <input type="text" name="purpose" id="purpose" />
+                        <br>
+                        <input type="submit" value="send vibe" />
+                        <br>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <!-- soul datatable implementation start -->
+                    
+                    <table class="display" id="souls">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="soulTable" class="dataTab"></tbody>
+                    </table>
+                    
+                    <!-- soul datatable implementation end -->
+                    
+                    <h3>Touching</h3>
+                    <form action="soul" method="POST">
+                        <label for="name">name</label>
+                        <br>
+                        <input type="text" name="name" id="name" />
+                        <br>
+                        <input type="submit" value="touch soul">
+                        <br>
+                    </form>
+                </div>
+        </div>
+                
+        <div id="row04" class="row py-3 px-5">
+            <div class="col-md-4">
+                <h3>Forgetting</h3>
+                <form action="thought/delete" method="POST">
+                    <label for="id">id</label>
+                    <br>
+                    <input type="text" name="id" id="id" />
+                    <br>
+                    <input type="submit" value="forget thought" />
+                    <br>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Cancelling</h3>
+                <form action="vibe/delete" method="POST">
+                    <label for="id">id</label>
+                    <br>
+                    <input type="text" name="id" id="id" />
+                    <br>
+                    <input type="submit" value="cancel vibe" />
+                    <br>
+                </form>
+            </div>
+        </div>
+                
+        <div id="row05" class="row py-5 px-5">
+            <div class="col-md-4">
+                <h3>Moving</h3>
+                <form action="thought/move" method="POST">
+                    <label for="id">id</label>
+                    <br>
+                    <input type="text" name="id" id="id" />
+                    <br>
+                    <label for="location">location</label>
+                    <br>
+                    <input type="text" name="location" id="location" />
+                    <br>
+                    <input type="submit" value="move thought" />
+                    <br>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Changing</h3>
+                <form action="vibe/change" method="POST">
+                    <label for="id">id</label>
+                    <br>
+                    <input type="text" name="id" id="id" />
+                    <br>
+                    <label for="tldr">tldr</label>
+                    <br>
+                    <input type="text" name="tldr" id="tldr" />
+                    <br>
+                    <input type="submit" value="change vibe" />
+                    <br>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div>
-        <h2>Vibes</h2>
-        <table id="vibeTable"></table>
-
-        <h3>Sending</h3>
-        <form action="vibe" method="POST">
-            <label for="tldr">tldr</label>
-            <br>
-            <input type="text" name="tldr" id="tldr" />
-            <br>
-            <label for="soul">soul</label>
-            <br>
-            <input type="text" name="soul" id="soul" />
-            <br>
-            <label for="purpose">purpose</label>
-            <br>
-            <input type="text" name="purpose" id="purpose" />
-            <br>
-            <input type="submit" value="send" />
-            <br>
-        </form>
-    </div>
-
-    <div>
-        <h2>Souls</h2>
-        <table id="soulTable"></table>
-
-        <h3>Touching</h3>
-        <form action="soul" method="POST">
-            <label for="name">name</label>
-            <br>
-            <input type="text" name="name" id="name" />
-            <br>
-            <input type="submit" value="touch">
-            <br>
-        </form>
-    </div>
-
-    <div>
-        <h2>ghuDbyes</h2>
-        <form action="logout" method="POST">
-            <input type="submit" value="bye" />
-        </form>
-    </div>
 </body>
-<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="headspace.js"></script>
 </html>

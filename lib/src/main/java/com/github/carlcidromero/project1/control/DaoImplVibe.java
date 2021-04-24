@@ -72,7 +72,7 @@ public class DaoImplVibe implements DaoVibe {
   }
 
   @Override
-  public void kill(Vibe vibe) {
+  public void cancel(Vibe vibe) {
 
     try {
       LOGGER.info("executing database delete");
@@ -85,6 +85,23 @@ public class DaoImplVibe implements DaoVibe {
       e.printStackTrace();
     }
 
+  }
+
+  @Override
+  public void change(int id, String tldr) {
+    
+    try {
+      LOGGER.info("executing database update");
+      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE vibe SET tldr = ? WHERE id = ?");
+      preparedStatement.setString(1, tldr);
+      preparedStatement.setInt(2, id);
+      preparedStatement.executeUpdate();
+      LOGGER.info("successfully executed database update");
+    } catch(SQLException e) {
+      LOGGER.error("error executing database update: " + e.getMessage());
+      e.printStackTrace();
+    }
+    
   }
 
 }

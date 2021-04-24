@@ -8,22 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.github.carlcidromero.project1.model.Thought;
-
-@WebServlet("/thought/delete")
-public class ControllerThoughtDelete extends HttpServlet {
-
-  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+@WebServlet("/thought/move")
+public class ControllerThoughtMove extends HttpServlet {
   
+  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    
     int id = Integer.parseInt(req.getParameter("id"));
-    Thought thought = new Thought(id);
-
-    databaseConnector.forgetThought(thought);
+    String location = req.getParameter("location");
+    databaseConnector.moveThought(id, location);
     resp.sendRedirect("/lib/headspace.html");
 
   }
-
+  
 }

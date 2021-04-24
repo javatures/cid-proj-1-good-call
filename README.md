@@ -22,6 +22,15 @@ Tools & APIs
         - [ ] Jenkins CI automation
         - [ ] Mockito
 
+## Roadmap
+
+### Highlight Destination
+
+#### Breadmaker
+
+- feed(Crumbs)
+- make(Slice slice = new Wisdom())
+
 ## Architecture
 
     - [ ] Anemic/DDD OR n-tier package & class structure
@@ -58,6 +67,7 @@ Tools & APIs
         - [x] logout of my ghuD so that
         - [x] create a Thought so that
         - [x] forget a Thought so that
+        - [x] update a Thought so that
         - [ ] upload a Brain Freeze so that I can build my Muse so that
         - [ ] view an individual Brain Freeze so that
         - [ ] view my Muse- my collection of Brain Freezes so that
@@ -70,11 +80,11 @@ Tools & APIs
         - [ ] change my Perspective from Expressive to Refelctive so that
         - [x] view my collection of Souls so that
         - [x] create a Vibe so that
-        - [ ] forget a Vibe so that
+        - [x] cancel a Vibe so that
+        - [x] update a Vibe so that
         - [x] view all Vibes so that
         - [ ] view a Brain Freeze of a Soul so that
         - [ ] view a Wavelength of Vibes between myself and a Soul so that
-        - [ ] update a Vibe so that
 
 ## Glossary
 

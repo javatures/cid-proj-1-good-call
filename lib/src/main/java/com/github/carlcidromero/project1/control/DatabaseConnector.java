@@ -29,7 +29,13 @@ public class DatabaseConnector {
   DaoImplVibe daoVibe;
   DaoImplSoul daoSoul;
 
-  public DatabaseConnector(){}
+  // begin singleton implementation
+  static DatabaseConnector databaseConnector = new DatabaseConnector();
+  private DatabaseConnector(){}
+  public static DatabaseConnector getInstance() {
+    return databaseConnector;
+  }
+  // end singleton implementation
 
   public void connectToDatabase() {
     try {
@@ -76,6 +82,11 @@ public class DatabaseConnector {
     daoThought.forget(thought);
   }
 
+  public void moveThought(int id, String location) {
+    connectToDatabase();
+    daoThought.move(id, location);
+  }
+
   List<Vibe> vibes = new ArrayList<>();
   public List<Vibe> feelVibes() {
     connectToDatabase();
@@ -88,9 +99,14 @@ public class DatabaseConnector {
     daoVibe.send(vibe);
   }
 
-  public void killVibe(Vibe vibe) {
+  public void cancelVibe(Vibe vibe) {
     connectToDatabase();
-    daoVibe.kill(vibe);
+    daoVibe.cancel(vibe);
+  }
+
+  public void changeVibe(int id, String tldr) {
+    connectToDatabase();
+    daoVibe.change(id, tldr);
   }
 
   List<Soul> souls = new ArrayList<>();

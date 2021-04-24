@@ -16,10 +16,11 @@ import com.github.carlcidromero.project1.model.Soul;
 @WebServlet("/soul")
 public class ControllerSoul extends HttpServlet {
 
+  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
-    DatabaseConnector databaseConnector = new DatabaseConnector();
     List<Soul> souls = new ArrayList<>();
     souls = databaseConnector.observeSouls();
 
@@ -31,8 +32,6 @@ public class ControllerSoul extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
-    DatabaseConnector databaseConnector = new DatabaseConnector();
 
     String name = req.getParameter("name");
 

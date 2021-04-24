@@ -15,11 +15,12 @@ import com.github.carlcidromero.project1.model.Vibe;
 
 @WebServlet("/vibe")
 public class ControllerVibe extends HttpServlet {
-  
+
+  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
-    DatabaseConnector databaseConnector = new DatabaseConnector();
+
     List<Vibe> vibes = new ArrayList<>();
     vibes = databaseConnector.feelVibes();
 
@@ -32,8 +33,6 @@ public class ControllerVibe extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
-    DatabaseConnector databaseConnector = new DatabaseConnector();
 
     String tldr = req.getParameter("tldr");
     int soulId = Integer.parseInt(req.getParameter("soul"));

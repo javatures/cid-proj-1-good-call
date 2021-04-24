@@ -49,6 +49,10 @@ public class Vibe {
     this.purpose = purpose;
   }
 
+  public Vibe(int id) {
+    this.id = id;
+  }
+
   @Override
   public String toString() {
     return "Vibe [id=" + id + ", purpose=" + purpose + ", soulId=" + soulId + ", tldr=" + tldr + "]";

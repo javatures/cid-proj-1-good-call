@@ -16,10 +16,11 @@ import com.github.carlcidromero.project1.model.Thought;
 @WebServlet("/thought")
 public class ControllerThought extends HttpServlet {
 
+    DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        DatabaseConnector databaseConnector = new DatabaseConnector();
         List<Thought> thoughts = new ArrayList<>();
         thoughts = databaseConnector.rememberThoughts();
 
@@ -32,8 +33,6 @@ public class ControllerThought extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
-        DatabaseConnector databaseConnector = new DatabaseConnector();
 
         String tldr = req.getParameter("tldr");
         String location = req.getParameter("location");

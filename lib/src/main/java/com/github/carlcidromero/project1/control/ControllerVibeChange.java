@@ -8,20 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.github.carlcidromero.project1.model.Thought;
-
-@WebServlet("/thought/delete")
-public class ControllerThoughtDelete extends HttpServlet {
-
-  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+@WebServlet("/vibe/change")
+public class ControllerVibeChange extends HttpServlet {
   
+  DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
+
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    
     int id = Integer.parseInt(req.getParameter("id"));
-    Thought thought = new Thought(id);
-
-    databaseConnector.forgetThought(thought);
+    String tldr = req.getParameter("tldr");
+    databaseConnector.changeVibe(id, tldr);
     resp.sendRedirect("/lib/headspace.html");
 
   }
