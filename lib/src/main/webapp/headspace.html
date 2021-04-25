@@ -67,7 +67,19 @@
                     </form>
                 </div>
                 <div class="col-md-4">
-                    <table id="vibeTable"></table>
+                    
+                    <!-- vibe datatable implementation start  -->
+                    <table class="display" id="vibes">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>tldr</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vibeTable" class="dataTab"></tbody>
+                    </table>
+                    <!-- vibe datatable implementation end  -->
+                    
                     <h3>Sending</h3>
                     <form action="vibe" method="POST">
                         <label for="tldr">tldr</label>
@@ -87,8 +99,8 @@
                     </form>
                 </div>
                 <div class="col-md-4">
-                    <!-- soul datatable implementation start -->
                     
+                    <!-- soul datatable implementation start -->
                     <table class="display" id="souls">
                         <thead>
                             <tr>
@@ -98,7 +110,6 @@
                         </thead>
                         <tbody id="soulTable" class="dataTab"></tbody>
                     </table>
-                    
                     <!-- soul datatable implementation end -->
                     
                     <h3>Touching</h3>

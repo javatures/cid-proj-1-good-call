@@ -39,7 +39,7 @@ Tools & APIs
         - [x] Data Access Object
         - [ ] Business Delegate
         - [ ] Model-View-Controller
-        - [x] Front Controller
+        - [ ] Front Controller
     - [x] SQL Normalization (3rd form)
     - [x] PL/pgSQL
     - [ ] Optional:
@@ -47,7 +47,7 @@ Tools & APIs
 
 ## Functionality
 
-    - [ ] CRUD - Create, Read, Update, Delete
+    - [x] CRUD - Create, Read, Update, Delete
     - [x] Web App dashboard interface
     - [x] Asynchronous interface updates
     - [x] Login - Authentication & Authorization
@@ -57,7 +57,7 @@ Tools & APIs
 ## Presentation
 
     - [ ] Prepare a demonstration of functionality requirements through a browser
-    - [ ] Prepare visual aides (slides) introducing the project requirements and features
+    - [x] Prepare visual aides (slides) introducing the project requirements and features
 
 ## User Stories
 
