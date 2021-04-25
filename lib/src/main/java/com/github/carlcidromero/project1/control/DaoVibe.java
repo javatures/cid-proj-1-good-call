@@ -9,5 +9,5 @@ public interface DaoVibe {
   List<Vibe> feelAll();
   void send(Vibe vibe);
   void cancel(Vibe vibe);
-  void change(int id, String tldr);
+  void change(int vibeId, String vibeTldr);
 }

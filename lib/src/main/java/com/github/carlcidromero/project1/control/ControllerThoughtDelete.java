@@ -18,8 +18,8 @@ public class ControllerThoughtDelete extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    int id = Integer.parseInt(req.getParameter("id"));
-    Thought thought = new Thought(id);
+    int thoughtId = Integer.parseInt(req.getParameter("thoughtId"));
+    Thought thought = new Thought(thoughtId);
 
     databaseConnector.forgetThought(thought);
     resp.sendRedirect("/lib/headspace.html");

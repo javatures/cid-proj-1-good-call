@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.carlcidromero.project1.model.Thought;
-import com.github.carlcidromero.project1.model.Vibe;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,13 +35,11 @@ public class DaoImplThought implements DaoThought {
       ResultSet resultSet = statement.executeQuery("SELECT * FROM thought");
       while(resultSet.next()) {
         thought = new Thought();
-        Vibe vibe = new Vibe();
-        thought.setId(resultSet.getInt("id"));
-        vibe.setId(resultSet.getInt("vibe_id"));
-        thought.setVibe(vibe);
-        thought.setTldr(resultSet.getString("tldr"));
-        thought.setLocation(resultSet.getString("location"));
-        thought.setFrame(resultSet.getString("frame"));
+        thought.setThoughtId(resultSet.getInt("thoughtId"));
+        thought.setThoughtVibeId(resultSet.getInt("thoughtVibeId"));
+        thought.setThoughtTldr(resultSet.getString("thoughtTldr"));
+        thought.setThoughtLocation(resultSet.getString("thoughtLocation"));
+        thought.setThoughtFrame(resultSet.getString("thoughtFrame"));
         thoughts.add(thought);
       }
       LOGGER.info("successfully executed database query");
@@ -58,14 +55,14 @@ public class DaoImplThought implements DaoThought {
 
     try {
       LOGGER.info("executing database insert");
-      PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO thought (tldr, location, frame) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
-      preparedStatement.setString(1, thought.getTldr());
-      preparedStatement.setString(2, thought.getLocation());
-      preparedStatement.setString(3, thought.getFrame());
+      PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO thought (thoughtTldr, thoughtLocation, thoughtFrame) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+      preparedStatement.setString(1, thought.getThoughtTldr());
+      preparedStatement.setString(2, thought.getThoughtLocation());
+      preparedStatement.setString(3, thought.getThoughtFrame());
       preparedStatement.execute();
       ResultSet resultSet = preparedStatement.getGeneratedKeys();
       if(resultSet.next()) {
-        thought.setId(resultSet.getInt(1));
+        thought.setThoughtId(resultSet.getInt(1));
       }
       LOGGER.info("successfully executed database insert");
     } catch(SQLException e) {
@@ -79,8 +76,8 @@ public class DaoImplThought implements DaoThought {
     
     try {
       LOGGER.info("executing database delete");
-      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM thought WHERE id = ?");
-      preparedStatement.setInt(1, thought.getId());
+      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM thought WHERE thoughtId = ?");
+      preparedStatement.setInt(1, thought.getThoughtId());
       preparedStatement.execute();
       LOGGER.info("successfully executed database delete");
     } catch(SQLException e) {
@@ -91,13 +88,13 @@ public class DaoImplThought implements DaoThought {
   }
 
   @Override
-  public void move(int id, String location) {
+  public void move(int thoughtId, String thoughtLocation) {
     
     try {
       LOGGER.info("executing database update");
-      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE thought SET location = ? WHERE id = ?");
-      preparedStatement.setString(1, location);
-      preparedStatement.setInt(2, id);
+      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE thought SET thoughtLocation = ? WHERE thoughtId = ?");
+      preparedStatement.setString(1, thoughtLocation);
+      preparedStatement.setInt(2, thoughtId);
       preparedStatement.executeUpdate();
       LOGGER.info("successfully executed database update");
     } catch(SQLException e) {

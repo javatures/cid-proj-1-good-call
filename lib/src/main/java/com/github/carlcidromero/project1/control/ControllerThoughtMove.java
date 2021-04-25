@@ -16,9 +16,9 @@ public class ControllerThoughtMove extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
-    int id = Integer.parseInt(req.getParameter("id"));
-    String location = req.getParameter("location");
-    databaseConnector.moveThought(id, location);
+    int thoughtId = Integer.parseInt(req.getParameter("thoughtId"));
+    String thoughtLocation = req.getParameter("thoughtLocation");
+    databaseConnector.moveThought(thoughtId, thoughtLocation);
     resp.sendRedirect("/lib/headspace.html");
 
   }

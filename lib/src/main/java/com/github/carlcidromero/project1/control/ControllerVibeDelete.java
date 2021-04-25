@@ -18,8 +18,8 @@ public class ControllerVibeDelete extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    int id = Integer.parseInt(req.getParameter("id"));
-    Vibe vibe = new Vibe(id);
+    int vibeId = Integer.parseInt(req.getParameter("vibeId"));
+    Vibe vibe = new Vibe(vibeId);
 
     databaseConnector.cancelVibe(vibe);
     resp.sendRedirect("/lib/headspace.html");

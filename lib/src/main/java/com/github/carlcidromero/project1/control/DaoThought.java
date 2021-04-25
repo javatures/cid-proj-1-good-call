@@ -9,6 +9,6 @@ public interface DaoThought {
     List<Thought> rememberAll();
     void contemplate(Thought thought);
     void forget(Thought thought);
-    void move(int id, String location);
+    void move(int thoughtId, String thoughtLocation);
     
 }

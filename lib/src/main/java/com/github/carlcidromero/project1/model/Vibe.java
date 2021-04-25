@@ -1,61 +1,64 @@
 package com.github.carlcidromero.project1.model;
 
 public class Vibe {
-  
-  private int id;
-  private int soulId;
-  private String tldr;
-  private String purpose;
 
-  public int getId() {
-    return id;
+  private int vibeId;
+  private int vibeSoulId;
+  private String vibeTldr;
+  private String vibePurpose;
+
+  public int getVibeId() {
+    return vibeId;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setVibeId(int vibeId) {
+    this.vibeId = vibeId;
   }
 
-  public int getSoulId() {
-    return soulId;
+  public int getVibeSoulId() {
+    return vibeSoulId;
   }
 
-  public void setSoulId(int soulId) {
-    this.soulId = soulId;
+  public void setVibeSoulId(int vibeSoulId) {
+    this.vibeSoulId = vibeSoulId;
   }
 
-  public String getTldr() {
-    return tldr;
+  public String getVibeTldr() {
+    return vibeTldr;
   }
 
-  public void setTldr(String tldr) {
-    this.tldr = tldr;
+  public void setVibeTldr(String vibeTldr) {
+    this.vibeTldr = vibeTldr;
   }
 
-  public String getPurpose() {
-    return purpose;
+  public String getVibePurpose() {
+    return vibePurpose;
   }
 
-  public void setPurpose(String purpose) {
-    this.purpose = purpose;
+  public void setVibePurpose(String vibePurpose) {
+    this.vibePurpose = vibePurpose;
+  }
+
+  @Override
+  public String toString() {
+    return "Vibe [vibeId=" + vibeId + ", vibePurpose=" + vibePurpose + ", vibeSoulId=" + vibeSoulId + ", vibeTldr="
+        + vibeTldr + "]";
   }
 
   public Vibe() {
   }
 
-  public Vibe(int id, int soulId, String tldr, String purpose) {
-    this.id = id;
-    this.soulId = soulId;
-    this.tldr = tldr;
-    this.purpose = purpose;
+  
+
+  public Vibe(int vibeId, int vibeSoulId, String vibeTldr, String vibePurpose) {
+    this.vibeId = vibeId;
+    this.vibeSoulId = vibeSoulId;
+    this.vibeTldr = vibeTldr;
+    this.vibePurpose = vibePurpose;
   }
 
-  public Vibe(int id) {
-    this.id = id;
-  }
-
-  @Override
-  public String toString() {
-    return "Vibe [id=" + id + ", purpose=" + purpose + ", soulId=" + soulId + ", tldr=" + tldr + "]";
+  public Vibe(int vibeId) {
+    this.vibeId = vibeId;
   }
 
 }

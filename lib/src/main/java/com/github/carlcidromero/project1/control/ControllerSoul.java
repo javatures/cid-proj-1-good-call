@@ -33,9 +33,9 @@ public class ControllerSoul extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    String name = req.getParameter("name");
+    String soulName = req.getParameter("soulName");
 
-    Soul soul = new Soul(0, name);
+    Soul soul = new Soul(0, soulName);
 
     databaseConnector.touchSoul(soul);
     resp.sendRedirect("headspace.html");

@@ -19,18 +19,18 @@ public class ControllerLogin extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Person steve = new Person();
-        steve.setId(1);
-        steve.setUsername("steve");
-        steve.setPassword("password");
+        steve.setPersonId(1);
+        steve.setPersonUsername("steve");
+        steve.setPersonPassword("password");
 
-        String person = req.getParameter("person");
-        String password = req.getParameter("password");
+        String person = req.getParameter("personUsername");
+        String password = req.getParameter("personPassword");
 
         HttpSession httpSession = req.getSession();
-        httpSession.setAttribute("person", steve.getUsername());
-        httpSession.setAttribute("password", steve.getPassword());
+        httpSession.setAttribute("personUsername", steve.getPersonUsername());
+        httpSession.setAttribute("personPassword", steve.getPersonPassword());
 
-        if (person.equals(steve.getUsername()) && password.equals(steve.getPassword())) {
+        if (person.equals(steve.getPersonUsername()) && password.equals(steve.getPersonPassword())) {
             resp.sendRedirect("/lib/headspace.html");
         }
 

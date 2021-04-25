@@ -16,9 +16,9 @@ public class ControllerVibeChange extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
-    int id = Integer.parseInt(req.getParameter("id"));
-    String tldr = req.getParameter("tldr");
-    databaseConnector.changeVibe(id, tldr);
+    int vibeId = Integer.parseInt(req.getParameter("vibeId"));
+    String vibeTldr = req.getParameter("vibeTldr");
+    databaseConnector.changeVibe(vibeId, vibeTldr);
     resp.sendRedirect("/lib/headspace.html");
 
   }

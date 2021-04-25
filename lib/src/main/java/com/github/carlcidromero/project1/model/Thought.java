@@ -1,78 +1,73 @@
 package com.github.carlcidromero.project1.model;
 
 public class Thought {
-    private int id;
-    private Vibe vibe;
-    private String tldr;
-    private String location;
-    private String frame;
+    private int thoughtId;
+    private int thoughtVibeId;
+    private String thoughtTldr;
+    private String thoughtLocation;
+    private String thoughtFrame;
 
-    public int getId() {
-        return id;
+    public int getThoughtId() {
+        return thoughtId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setThoughtId(int thoughtId) {
+        this.thoughtId = thoughtId;
     }
 
-    public Vibe getVibe() {
-        return vibe;
+    public int getThoughtVibeId() {
+        return thoughtVibeId;
     }
 
-    public void setVibe(Vibe vibe) {
-        this.vibe = vibe;
+    public void setThoughtVibeId(int thoughtVibeId) {
+        this.thoughtVibeId = thoughtVibeId;
     }
 
-    public String getTldr() {
-        return tldr;
+    public String getThoughtTldr() {
+        return thoughtTldr;
     }
 
-    public void setTldr(String tldr) {
-        this.tldr = tldr;
+    public void setThoughtTldr(String thoughtTldr) {
+        this.thoughtTldr = thoughtTldr;
     }
 
-    public String getLocation() {
-        return location;
+    public String getThoughtLocation() {
+        return thoughtLocation;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setThoughtLocation(String thoughtLocation) {
+        this.thoughtLocation = thoughtLocation;
     }
 
-    public String getFrame() {
-        return frame;
+    public String getThoughtFrame() {
+        return thoughtFrame;
     }
 
-    public void setFrame(String frame) {
-        this.frame = frame;
+    public void setThoughtFrame(String thoughtFrame) {
+        this.thoughtFrame = thoughtFrame;
+    }
+
+    @Override
+    public String toString() {
+        return "Thought [thoughtFrame=" + thoughtFrame + ", thoughtId=" + thoughtId + ", thoughtLocation="
+                + thoughtLocation + ", thoughtTldr=" + thoughtTldr + ", thoughtVibeId=" + thoughtVibeId + "]";
     }
 
     public Thought() {
     }
 
-    public Thought(int id, String tldr, String location, String frame) {
-        this.id = id;
-        this.tldr = tldr;
-        this.location = location;
-        this.frame = frame;
+    public Thought(int thoughtId) {
+        this.thoughtId = thoughtId;
     }
 
-    public Thought(int id, Vibe vibe, String tldr, String location, String frame) {
-        this.id = id;
-        this.vibe = vibe;
-        this.tldr = tldr;
-        this.location = location;
-        this.frame = frame;
+    public Thought(int thoughtId, String thoughtTldr, String thoughtLocation, String thoughtFrame) {
+        this.thoughtId = thoughtId;
+        this.thoughtTldr = thoughtTldr;
+        this.thoughtLocation = thoughtLocation;
+        this.thoughtFrame = thoughtFrame;
     }
 
-    public Thought(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Thought [frame=" + frame + ", id=" + id + ", location=" + location + ", tldr=" + tldr + ", vibe=" + vibe
-                + "]";
-    }
+    
+    
 
 }

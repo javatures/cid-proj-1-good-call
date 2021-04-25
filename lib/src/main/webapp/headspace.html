@@ -50,17 +50,17 @@
                     <h3>Contemplating</h3>
                     <table id="thoughtTable"></table>
                     <form action="thought" method="POST">
-                        <label for="tldr">tldr</label>
+                        <label for="thoughtTldr">tldr</label>
                         <br>
-                        <input type="text" name="tldr" id="tldr" />
+                        <input type="text" name="thoughtTldr" id="thoughtTldr" />
                         <br>
-                        <label for="location">location</label>
+                        <label for="thoughtLocation">location</label>
                         <br>
-                        <input type="text" name="location" id="location" />
+                        <input type="text" name="thoughtLocation" id="thoughtLocation" />
                         <br>
-                        <label for="frame">frame</label>
+                        <label for="thoughtFrame">frame</label>
                         <br>
-                        <input type="text" name="frame" id="frame" />
+                        <input type="text" name="thoughtFrame" id="thoughtFrame" />
                         <br>
                         <input type="submit" value="contemplate thought" />
                         <br>
@@ -72,8 +72,8 @@
                     <table class="display" id="vibes">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>tldr</th>
+                                <th>vibeId</th>
+                                <th>vibeTldr</th>
                             </tr>
                         </thead>
                         <tbody id="vibeTable" class="dataTab"></tbody>
@@ -82,17 +82,17 @@
                     
                     <h3>Sending</h3>
                     <form action="vibe" method="POST">
-                        <label for="tldr">tldr</label>
+                        <label for="vibeTldr">tldr</label>
                         <br>
-                        <input type="text" name="tldr" id="tldr" />
+                        <input type="text" name="vibeTldr" id="vibeTldr" />
                         <br>
-                        <label for="soul">soul</label>
+                        <label for="vibeSoulId">soul</label>
                         <br>
-                        <input type="text" name="soul" id="soul" />
+                        <input type="text" name="vibeSoulId" id="vibeSoulId" />
                         <br>
-                        <label for="purpose">purpose</label>
+                        <label for="vibePurpose">purpose</label>
                         <br>
-                        <input type="text" name="purpose" id="purpose" />
+                        <input type="text" name="vibePurpose" id="vibePurpose" />
                         <br>
                         <input type="submit" value="send vibe" />
                         <br>
@@ -104,8 +104,8 @@
                     <table class="display" id="souls">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>name</th>
+                                <th>soulId</th>
+                                <th>soulName</th>
                             </tr>
                         </thead>
                         <tbody id="soulTable" class="dataTab"></tbody>
@@ -114,9 +114,9 @@
                     
                     <h3>Touching</h3>
                     <form action="soul" method="POST">
-                        <label for="name">name</label>
+                        <label for="soulName">name</label>
                         <br>
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="soulName" id="soulName" />
                         <br>
                         <input type="submit" value="touch soul">
                         <br>
@@ -128,9 +128,9 @@
             <div class="col-md-4">
                 <h3>Forgetting</h3>
                 <form action="thought/delete" method="POST">
-                    <label for="id">id</label>
+                    <label for="thoughtId">id</label>
                     <br>
-                    <input type="text" name="id" id="id" />
+                    <input type="text" name="thoughtId" id="thoughtId" />
                     <br>
                     <input type="submit" value="forget thought" />
                     <br>
@@ -139,9 +139,9 @@
             <div class="col-md-4">
                 <h3>Cancelling</h3>
                 <form action="vibe/delete" method="POST">
-                    <label for="id">id</label>
+                    <label for="vibeId">id</label>
                     <br>
-                    <input type="text" name="id" id="id" />
+                    <input type="text" name="vibeId" id="vibeId" />
                     <br>
                     <input type="submit" value="cancel vibe" />
                     <br>
@@ -153,13 +153,13 @@
             <div class="col-md-4">
                 <h3>Moving</h3>
                 <form action="thought/move" method="POST">
-                    <label for="id">id</label>
+                    <label for="thoughtId">id</label>
                     <br>
-                    <input type="text" name="id" id="id" />
+                    <input type="text" name="thoughtId" id="thoughtId" />
                     <br>
-                    <label for="location">location</label>
+                    <label for="thoughtLocation">location</label>
                     <br>
-                    <input type="text" name="location" id="location" />
+                    <input type="text" name="thoughtLocation" id="thoughtLocation" />
                     <br>
                     <input type="submit" value="move thought" />
                     <br>
@@ -168,13 +168,13 @@
             <div class="col-md-4">
                 <h3>Changing</h3>
                 <form action="vibe/change" method="POST">
-                    <label for="id">id</label>
+                    <label for="vibeId">id</label>
                     <br>
-                    <input type="text" name="id" id="id" />
+                    <input type="text" name="vibeId" id="vibeId" />
                     <br>
-                    <label for="tldr">tldr</label>
+                    <label for="vibeTldr">tldr</label>
                     <br>
-                    <input type="text" name="tldr" id="tldr" />
+                    <input type="text" name="vibeTldr" id="vibeTldr" />
                     <br>
                     <input type="submit" value="change vibe" />
                     <br>

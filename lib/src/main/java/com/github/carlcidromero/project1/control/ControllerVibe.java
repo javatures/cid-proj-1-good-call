@@ -34,11 +34,11 @@ public class ControllerVibe extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    String tldr = req.getParameter("tldr");
-    int soulId = Integer.parseInt(req.getParameter("soul"));
-    String purpose = req.getParameter("purpose");
+    String vibeTldr = req.getParameter("vibeTldr");
+    int vibeSoulId = Integer.parseInt(req.getParameter("vibeSoulId"));
+    String vibePurpose = req.getParameter("vibePurpose");
 
-    Vibe vibe = new Vibe(0, soulId, tldr, purpose);
+    Vibe vibe = new Vibe(0, vibeSoulId, vibeTldr, vibePurpose);
 
     databaseConnector.sendVibe(vibe);
     resp.sendRedirect("headspace.html");

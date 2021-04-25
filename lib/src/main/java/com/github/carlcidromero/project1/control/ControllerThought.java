@@ -34,11 +34,11 @@ public class ControllerThought extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String tldr = req.getParameter("tldr");
-        String location = req.getParameter("location");
-        String frame = req.getParameter("frame");
+        String thoughtTldr = req.getParameter("thoughtTldr");
+        String thoughtLocation = req.getParameter("thoughtLocation");
+        String thoughtFrame = req.getParameter("thoughtFrame");
 
-        Thought thought = new Thought(0, tldr, location, frame);
+        Thought thought = new Thought(0, thoughtTldr, thoughtLocation, thoughtFrame);
 
         databaseConnector.contemplateThought(thought);
         resp.sendRedirect("headspace.html");

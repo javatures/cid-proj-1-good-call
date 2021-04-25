@@ -22,7 +22,7 @@ public class DaoImplVibe implements DaoVibe {
   public DaoImplVibe(Connection connection) {
     this.connection = connection;
   }
-  
+
   @Override
   public List<Vibe> feelAll() {
 
@@ -32,16 +32,16 @@ public class DaoImplVibe implements DaoVibe {
       LOGGER.info("executing database query");
       Statement statement = connection.createStatement();
       ResultSet resultSet = statement.executeQuery("SELECT * FROM vibe");
-      while(resultSet.next()) {
+      while (resultSet.next()) {
         Vibe vibe = new Vibe();
-        vibe.setId(resultSet.getInt("id"));
-        vibe.setSoulId(resultSet.getInt("soul_id"));
-        vibe.setTldr(resultSet.getString("tldr"));
-        vibe.setPurpose(resultSet.getString("purpose"));
+        vibe.setVibeId(resultSet.getInt("vibeId"));
+        vibe.setVibeSoulId(resultSet.getInt("vibeSoulId"));
+        vibe.setVibeTldr(resultSet.getString("vibeTldr"));
+        vibe.setVibePurpose(resultSet.getString("vibePurpose"));
         vibes.add(vibe);
       }
       LOGGER.info("successfully executed database query");
-    } catch(SQLException e) {
+    } catch (SQLException e) {
       LOGGER.error("error while executing database query: " + e.getMessage());
       e.printStackTrace();
     }
@@ -50,25 +50,25 @@ public class DaoImplVibe implements DaoVibe {
 
   @Override
   public void send(Vibe vibe) {
-    
+
     try {
       LOGGER.info("executing database insert");
-      PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO vibe (tldr, soul_id, purpose) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
-      preparedStatement.setString(1, vibe.getTldr());
-      preparedStatement.setInt(2, vibe.getSoulId());
-      preparedStatement.setString(3, vibe.getPurpose());
+      PreparedStatement preparedStatement = connection.prepareStatement(
+          "INSERT INTO vibe (vibeTldr, vibeSoulId, vibePurpose) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+      preparedStatement.setString(1, vibe.getVibeTldr());
+      preparedStatement.setInt(2, vibe.getVibeSoulId());
+      preparedStatement.setString(3, vibe.getVibePurpose());
       preparedStatement.execute();
       ResultSet resultSet = preparedStatement.getGeneratedKeys();
-      if(resultSet.next()) {
-        vibe.setId(resultSet.getInt(1));
+      if (resultSet.next()) {
+        vibe.setVibeId(resultSet.getInt(1));
       }
       LOGGER.info("successfully executed database insert");
-    } catch(SQLException e) {
+    } catch (SQLException e) {
       LOGGER.error("error while executing database insert: " + e.getMessage());
       e.printStackTrace();
     }
-    
-    
+
   }
 
   @Override
@@ -76,11 +76,11 @@ public class DaoImplVibe implements DaoVibe {
 
     try {
       LOGGER.info("executing database delete");
-      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM vibe WHERE id = ?");
-      preparedStatement.setInt(1, vibe.getId());
+      PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM vibe WHERE vibeId = ?");
+      preparedStatement.setInt(1, vibe.getVibeId());
       preparedStatement.execute();
       LOGGER.info("successfully executed database delete");
-    } catch(SQLException e) {
+    } catch (SQLException e) {
       LOGGER.error("error while executing database delete: " + e.getMessage());
       e.printStackTrace();
     }
@@ -88,20 +88,20 @@ public class DaoImplVibe implements DaoVibe {
   }
 
   @Override
-  public void change(int id, String tldr) {
-    
+  public void change(int vibeId, String vibeTldr) {
+
     try {
       LOGGER.info("executing database update");
       PreparedStatement preparedStatement = connection.prepareStatement("UPDATE vibe SET tldr = ? WHERE id = ?");
-      preparedStatement.setString(1, tldr);
-      preparedStatement.setInt(2, id);
+      preparedStatement.setString(1, vibeTldr);
+      preparedStatement.setInt(2, vibeId);
       preparedStatement.executeUpdate();
       LOGGER.info("successfully executed database update");
-    } catch(SQLException e) {
+    } catch (SQLException e) {
       LOGGER.error("error executing database update: " + e.getMessage());
       e.printStackTrace();
     }
-    
+
   }
 
 }

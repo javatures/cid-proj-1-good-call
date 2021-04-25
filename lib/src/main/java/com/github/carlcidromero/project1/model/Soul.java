@@ -1,36 +1,36 @@
 package com.github.carlcidromero.project1.model;
 
 public class Soul {
-  private int id;
-  private String name;
+  private int soulId;
+  private String soulName;
 
-  public int getId() {
-    return id;
+  public int getSoulId() {
+    return soulId;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setSoulId(int soulId) {
+    this.soulId = soulId;
   }
 
-  public String getName() {
-    return name;
+  public String getSoulName() {
+    return soulName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setSoulName(String soulName) {
+    this.soulName = soulName;
   }
 
   public Soul() {
   }
 
-  public Soul(int id, String name) {
-    this.id = id;
-    this.name = name;
+  public Soul(int soulId, String soulName) {
+    this.soulId = soulId;
+    this.soulName = soulName;
   }
 
   @Override
   public String toString() {
-    return "Soul [id=" + id + ", name=" + name + "]";
+    return "Soul [soulId=" + soulId + ", soulName=" + soulName + "]";
   }
 
 }

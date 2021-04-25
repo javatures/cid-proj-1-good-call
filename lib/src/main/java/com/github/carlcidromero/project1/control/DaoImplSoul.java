@@ -34,8 +34,8 @@ public class DaoImplSoul implements DaoSoul {
       ResultSet resultSet = preparedStatement.executeQuery();
       while(resultSet.next()) {
         Soul soul = new Soul();
-        soul.setId(resultSet.getInt("id"));
-        soul.setName(resultSet.getString("name"));
+        soul.setSoulId(resultSet.getInt("soulId"));
+        soul.setSoulName(resultSet.getString("soulName"));
         souls.add(soul);
       }
       LOGGER.info("successfully executed database query");
@@ -52,12 +52,12 @@ public class DaoImplSoul implements DaoSoul {
     
     try {
       LOGGER.info("executing database insert");
-      PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO thought (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
-      preparedStatement.setString(1, soul.getName());
+      PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO soul (soulName) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+      preparedStatement.setString(1, soul.getSoulName());
       preparedStatement.execute();
       ResultSet resultSet = preparedStatement.getGeneratedKeys();
       if(resultSet.next()) {
-        soul.setId(resultSet.getInt(1));
+        soul.setSoulId(resultSet.getInt(1));
       }
       LOGGER.info("successfully executed database insert");
     } catch(SQLException e) {

@@ -2,37 +2,38 @@ package com.github.carlcidromero.project1.model;
 
 public class Person {
 
-  private int id;
-  private String username;
-  private String password;
+  private int personId;
+  private String personUsername;
+  private String personPassword;
 
-  public int getId() {
-    return id;
+  public int getPersonId() {
+    return personId;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setPersonId(int personId) {
+    this.personId = personId;
   }
 
-  public String getUsername() {
-    return username;
+  public String getPersonUsername() {
+    return personUsername;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setPersonUsername(String personUsername) {
+    this.personUsername = personUsername;
   }
 
-  public String getPassword() {
-    return password;
+  public String getPersonPassword() {
+    return personPassword;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setPersonPassword(String personPassword) {
+    this.personPassword = personPassword;
   }
 
   @Override
   public String toString() {
-    return "Person [id=" + id + ", password=" + password + ", username=" + username + "]";
+    return "Person [personId=" + personId + ", personPassword=" + personPassword + ", personUsername=" + personUsername
+        + "]";
   }
 
 }
