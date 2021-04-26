@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/logout")
 public class ControllerLogout extends HttpServlet {
+
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     req.getSession().invalidate();
     resp.sendRedirect("/lib");
   }
+  
 }

@@ -131,6 +131,10 @@ May be likened to a Kanban filled with Thoughts- consider using Headspace Locati
 
 May be likened to a task. These fill one's Headspace until cleared- an experience of joy when done so, especially expeditiously.
 
+#### Vibe
+
+Signals sent from one soul to another.
+
 #### Brain Freeze
 
 A portrait of a Soul
@@ -143,7 +147,7 @@ A collection of Brain Freezes From Wikipedia: The word muse is also sometimes us
 
 A person or Person that is not oneself.
 
-    You don't have a soul, Docter. You are a soul. You have a body, temporarily.
+    You don't have a soul, Doctor. You are a soul. You have a body, temporarily.
 
 #### Scoop
 

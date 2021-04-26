@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.carlcidromero.project1.control.dao.DaoSoul;
 import com.github.carlcidromero.project1.model.Soul;
 
 import org.apache.logging.log4j.LogManager;

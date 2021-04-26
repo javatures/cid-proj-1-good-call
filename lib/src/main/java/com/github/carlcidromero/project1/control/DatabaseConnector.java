@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import com.github.carlcidromero.project1.model.Headspace;
 import com.github.carlcidromero.project1.model.Soul;
 import com.github.carlcidromero.project1.model.Thought;
 import com.github.carlcidromero.project1.model.Vibe;
@@ -28,6 +29,7 @@ public class DatabaseConnector {
   DaoImplThought daoThought;
   DaoImplVibe daoVibe;
   DaoImplSoul daoSoul;
+  DaoImplHeadspace daoHeadspace;
 
   // begin singleton implementation
   static DatabaseConnector databaseConnector = new DatabaseConnector();
@@ -58,12 +60,21 @@ public class DatabaseConnector {
         daoThought = new DaoImplThought(connection);
         daoVibe = new DaoImplVibe(connection);
         daoSoul = new DaoImplSoul(connection);
+        daoHeadspace = new DaoImplHeadspace(connection);
 
     } catch (SQLException e) {
         LOGGER.error("error connecting to database: " + e.getMessage());
         e.printStackTrace();
     }
   }
+
+  List<Headspace> headspaces = new ArrayList<>();
+  public List<Headspace> viewHeadspaces() {
+    connectToDatabase();
+    headspaces = daoHeadspace.viewAll();
+    return headspaces;
+  }
+
 
   List<Thought> thoughts = new ArrayList<>();
   public List<Thought> rememberThoughts() {

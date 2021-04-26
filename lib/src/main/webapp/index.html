@@ -5,32 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>ghuD</title>
+    <title>ghuD Login</title>
 </head>
 <body>
 
-    <div>
-        <span>
-            <h1>Are You Ready To Get ghuD?</h1>
-        </span>
+    <div id="rowTitle" class="row pt-5 px-5">
+        <div class="col-md-5 offset-md-1">
+            <h1>Login</h1>
+        </div>
+        <div class="col-md-5 d-flex justify-content-end">
+            <h1>ghuD</h1>
+        </div>
     </div>
 
-    <form method="POST" action="login">
-
-        <!-- login form inputs -->
-        <div class="container">
-            
-            <label for="personUsername"><b>ghuD Person</b></label>
-            <input type="text" placeholder="What's your name?" name="personUsername" required>
-
-            <label for="personPassword"><b>ghuD Password</b></label>
-            <input type="password" placeholder="What's your password? Wait- don't tell me!" name="personPassword" required>
-
-            <button type="submit">get ghud</button>  
+    <div id="rowLogin" class="row pb-5 px-5">
+        <div class="col-md-10 d-flex justify-content-center offset-md-1">
+            <form action="login" method="post">
+                <label for="personUsername"><b>ghuD person</b></label>
+                <br>
+                <input type="text" name="personUsername" required>
+                <br>
+                <br>
+                <label for="personPassword"><b>ghuD password</b></label>
+                <br>
+                <input type="password" name="personPassword" required>
+                <br>
+                <br>
+                <button type="submit">get ghuD</button>
+            </form>
         </div>
-    
-    </form>
+    </div>
 
+    <div id="rowHeader" class="row py-1 px-5">
+        <div class="col-md-4 d-flex bg-warning text-white">
+            <h2>what are ghuD thoughts?</h2>
+        </div>
+        <div class="col-md-4 d-flex bg-danger text-white">
+            <h2>what are ghuD vibes?</h2>
+        </div>
+        <div class="col-md-4 d-flex bg-primary text-white">
+            <h2>what are ghuD souls?</h2>
+        </div>
+    </div>
+
+    <div id="rowContent" class="row py-1 px-5">
+        <div class="col-md-4">
+            <ul>
+                <li>May be likened to tasks- fill one's headspace until cleared</li>
+                <li><i>The primary cause of unhappiness is never the situation but your thoughts about it.</i></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul>
+                <li>A person that is not oneself</li>
+                <li><i>You don't have a soul, Doctor. You are a soul. You have a body, temporarily.</i></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul>
+                <li>Signals sent from one soul to another</li>
+                <li><i>You are not what you do, you are how you do it.</i></li>
+            </ul>
+        </div>
+    </div>
     <script src="headspace.js"></script>
 </body>
 </html>

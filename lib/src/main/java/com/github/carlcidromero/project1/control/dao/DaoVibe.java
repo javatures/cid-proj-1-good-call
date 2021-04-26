@@ -1,4 +1,4 @@
-package com.github.carlcidromero.project1.control;
+package com.github.carlcidromero.project1.control.dao;
 
 import java.util.List;
 

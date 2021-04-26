@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.carlcidromero.project1.control.dao.DaoThought;
 import com.github.carlcidromero.project1.model.Thought;
 
 import org.apache.logging.log4j.LogManager;
@@ -31,13 +32,13 @@ public class DaoImplThought implements DaoThought {
 
     try {
       LOGGER.info("executing database query");
-      Statement statement = connection.createStatement();
+      Statement statement = connection.createStatement(); 
       ResultSet resultSet = statement.executeQuery("SELECT * FROM thought");
       while(resultSet.next()) {
         thought = new Thought();
         thought.setThoughtId(resultSet.getInt("thoughtId"));
-        thought.setThoughtVibeId(resultSet.getInt("thoughtVibeId"));
         thought.setThoughtTldr(resultSet.getString("thoughtTldr"));
+        thought.setThoughtVibeId(resultSet.getInt("thoughtVibeId"));
         thought.setThoughtLocation(resultSet.getString("thoughtLocation"));
         thought.setThoughtFrame(resultSet.getString("thoughtFrame"));
         thoughts.add(thought);

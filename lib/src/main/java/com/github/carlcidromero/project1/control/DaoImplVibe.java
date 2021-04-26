@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.carlcidromero.project1.control.dao.DaoVibe;
 import com.github.carlcidromero.project1.model.Vibe;
 
 import org.apache.logging.log4j.LogManager;

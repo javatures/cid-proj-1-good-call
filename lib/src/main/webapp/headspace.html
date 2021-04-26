@@ -11,11 +11,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet"> 
         <link href="style.css" rel="stylesheet">
-        <title>Headspace</title>
+        <title>ghuD Headspace</title>
     </head>
     <body>
 
-        <div id="row01" class="row pt-5 px-5">
+        <div id="rowTitle" class="row pt-5 px-5">
             <div class="col-md-5 offset-md-1">
                 <h1>Headspace</h1>
             </div>
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="row pb-5 px-5">
+        <div id="rowBye" class="row pb-5 px-5">
             <div class="col-md-5"></div>
             <div class="col-md-5 d-flex justify-content-end offset-md-1">
                 <form action="logout" method="POST">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div id="row02" class="row py-1 px-5">
+        <div id="rowHeader" class="row py-1 px-5">
             <div class="col-md-4 d-flex bg-warning text-white">
                 <h2>Thoughts</h2>
             </div>
@@ -45,113 +45,115 @@
             </div>
         </div>
 
-            <div id="row03" class="row py-3 px-5">
-                <div class="col-md-4">
-                    <h3>Contemplating</h3>
-                    <table id="thoughtTable"></table>
-                    <form action="thought" method="POST">
-                        <label for="thoughtTldr">tldr</label>
-                        <br>
-                        <input type="text" name="thoughtTldr" id="thoughtTldr" />
-                        <br>
-                        <label for="thoughtLocation">location</label>
-                        <br>
-                        <input type="text" name="thoughtLocation" id="thoughtLocation" />
-                        <br>
-                        <label for="thoughtFrame">frame</label>
-                        <br>
-                        <input type="text" name="thoughtFrame" id="thoughtFrame" />
-                        <br>
-                        <input type="submit" value="contemplate thought" />
-                        <br>
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    
-                    <!-- vibe datatable implementation start  -->
-                    <table class="display" id="vibes">
-                        <thead>
-                            <tr>
-                                <th>vibeId</th>
-                                <th>vibeTldr</th>
-                            </tr>
-                        </thead>
-                        <tbody id="vibeTable" class="dataTab"></tbody>
-                    </table>
-                    <!-- vibe datatable implementation end  -->
-                    
-                    <h3>Sending</h3>
-                    <form action="vibe" method="POST">
-                        <label for="vibeTldr">tldr</label>
-                        <br>
-                        <input type="text" name="vibeTldr" id="vibeTldr" />
-                        <br>
-                        <label for="vibeSoulId">soul</label>
-                        <br>
-                        <input type="text" name="vibeSoulId" id="vibeSoulId" />
-                        <br>
-                        <label for="vibePurpose">purpose</label>
-                        <br>
-                        <input type="text" name="vibePurpose" id="vibePurpose" />
-                        <br>
-                        <input type="submit" value="send vibe" />
-                        <br>
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    
-                    <!-- soul datatable implementation start -->
-                    <table class="display" id="souls">
-                        <thead>
-                            <tr>
-                                <th>soulId</th>
-                                <th>soulName</th>
-                            </tr>
-                        </thead>
-                        <tbody id="soulTable" class="dataTab"></tbody>
-                    </table>
-                    <!-- soul datatable implementation end -->
-                    
-                    <h3>Touching</h3>
-                    <form action="soul" method="POST">
-                        <label for="soulName">name</label>
-                        <br>
-                        <input type="text" name="soulName" id="soulName" />
-                        <br>
-                        <input type="submit" value="touch soul">
-                        <br>
-                    </form>
-                </div>
-        </div>
-                
-        <div id="row04" class="row py-3 px-5">
+        <div id="rowCreate" class="row py-3 px-5">
             <div class="col-md-4">
-                <h3>Forgetting</h3>
-                <form action="thought/delete" method="POST">
-                    <label for="thoughtId">id</label>
+                <!-- thought form begin -->
+                <h3>Contemplate</h3>
+                <form action="thought" method="POST">
+                    <label for="thoughtTldr">tldr</label>
                     <br>
-                    <input type="text" name="thoughtId" id="thoughtId" />
+                    <input type="text" name="thoughtTldr" id="thoughtTldr" />
                     <br>
-                    <input type="submit" value="forget thought" />
+                    <label for="thoughtLocation">location</label>
+                    <br>
+                    <input type="text" name="thoughtLocation" id="thoughtLocation" />
+                    <br>
+                    <label for="thoughtFrame">frame</label>
+                    <br>
+                    <input type="text" name="thoughtFrame" id="thoughtFrame" />
+                    <br>
+                    <input type="submit" value="contemplate thought" />
                     <br>
                 </form>
+                <!-- thought form end -->
             </div>
             <div class="col-md-4">
-                <h3>Cancelling</h3>
-                <form action="vibe/delete" method="POST">
-                    <label for="vibeId">id</label>
+                <!-- vibe form begin -->
+                <h3>Send</h3>
+                <form action="vibe" method="POST">
+                    <label for="vibeTldr">tldr</label>
                     <br>
-                    <input type="text" name="vibeId" id="vibeId" />
+                    <input type="text" name="vibeTldr" id="vibeTldr" />
                     <br>
-                    <input type="submit" value="cancel vibe" />
+                    <label for="vibeSoulId">soul</label>
+                    <br>
+                    <input type="text" name="vibeSoulId" id="vibeSoulId" />
+                    <br>
+                    <label for="vibePurpose">purpose</label>
+                    <br>
+                    <input type="text" name="vibePurpose" id="vibePurpose" />
+                    <br>
+                    <input type="submit" value="send vibe" />
                     <br>
                 </form>
+                <!-- vibe form end -->
+            </div>
+            <div class="col-md-4">
+                <!-- soul form begin -->
+                <h3>Touch</h3>
+                <form action="soul" method="POST">
+                    <label for="soulName">name</label>
+                    <br>
+                    <input type="text" name="soulName" id="soulName" />
+                    <br>
+                    <input type="submit" value="touch soul">
+                    <br>
+                </form>
+                <!-- soul form end -->
+            </div>
+        </div>
+
+        <div id="rowRead" class="row py-3 px-5">
+            <div class="col-md-4">
+                <h3>Remember</h3>
+                <!-- thought datatable implementation start  -->
+                <table class="display" id="thoughts">
+                    <thead>
+                        <tr>
+                            <th>THOUGHT-ID</th>
+                            <th>TLDR</th>
+                            <th>VIBE-ID</th>
+                            <th>LOCATION</th>
+                            <th>FRAME</th>
+                        </tr>
+                    </thead>
+                    <tbody id="thoughtTable" class="dataTab"></tbody>
+                </table>
+                <!-- thought datatable implementation end  -->
+            </div>
+            <div class="col-md-4">
+                <h3>Feel</h3>
+                <!-- vibe datatable implementation start  -->
+                <table class="display" id="vibes">
+                    <thead>
+                        <tr>
+                            <th>VIBE-ID</th>
+                            <th>TLDR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vibeTable" class="dataTab"></tbody>
+                </table>
+                <!-- vibe datatable implementation end  -->
+            </div>
+            <div class="col-md-4">
+                <h3>Observe</h3>
+                <!-- soul datatable implementation start -->
+                <table class="display" id="souls">
+                    <thead>
+                        <tr>
+                            <th>SOUL-ID</th>
+                            <th>NAME</th>
+                        </tr>
+                    </thead>
+                    <tbody id="soulTable" class="dataTab"></tbody>
+                </table>
+                <!-- soul datatable implementation end -->
             </div>
         </div>
                 
-        <div id="row05" class="row py-5 px-5">
+        <div id="rowUpdate" class="row py-5 px-5">
             <div class="col-md-4">
-                <h3>Moving</h3>
+                <h3>Move</h3>
                 <form action="thought/move" method="POST">
                     <label for="thoughtId">id</label>
                     <br>
@@ -166,7 +168,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h3>Changing</h3>
+                <h3>Change</h3>
                 <form action="vibe/change" method="POST">
                     <label for="vibeId">id</label>
                     <br>
@@ -177,6 +179,31 @@
                     <input type="text" name="vibeTldr" id="vibeTldr" />
                     <br>
                     <input type="submit" value="change vibe" />
+                    <br>
+                </form>
+            </div>
+        </div>
+
+        <div id="rowDelete" class="row py-3 px-5">
+            <div class="col-md-4">
+                <h3>Forget</h3>
+                <form action="thought/delete" method="POST">
+                    <label for="thoughtId">id</label>
+                    <br>
+                    <input type="text" name="thoughtId" id="thoughtId" />
+                    <br>
+                    <input type="submit" value="forget thought" />
+                    <br>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Cancel</h3>
+                <form action="vibe/delete" method="POST">
+                    <label for="vibeId">id</label>
+                    <br>
+                    <input type="text" name="vibeId" id="vibeId" />
+                    <br>
+                    <input type="submit" value="cancel vibe" />
                     <br>
                 </form>
             </div>

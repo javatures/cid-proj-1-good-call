@@ -1,6 +1,8 @@
 plugins {
     id 'java-library'
     id 'war'
+    id 'eclipse'
+    id 'idea'
 }
 
 repositories {
@@ -19,4 +21,7 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
