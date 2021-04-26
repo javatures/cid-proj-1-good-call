@@ -32,7 +32,7 @@
                 </form>
             </div>
         </div>
-
+        
         <div id="rowHeader" class="row py-1 px-5">
             <div class="col-md-4 d-flex bg-warning text-white">
                 <h2>Thoughts</h2>
@@ -44,23 +44,40 @@
                 <h2>Souls</h2>
             </div>
         </div>
-
+        
         <div id="rowCreate" class="row py-3 px-5">
             <div class="col-md-4">
                 <!-- thought form begin -->
                 <h3>Contemplate</h3>
                 <form action="thought" method="POST">
-                    <label for="thoughtTldr">tldr</label>
+                    <label for="thoughtTldr"><b>tldr</b></label>
                     <br>
                     <input type="text" name="thoughtTldr" id="thoughtTldr" />
                     <br>
-                    <label for="thoughtLocation">location</label>
+                    <label for="thoughtLocation"><b>location</b></label>
                     <br>
-                    <input type="text" name="thoughtLocation" id="thoughtLocation" />
+                    <input type="radio" name="thoughtLocation" id="top of mind" value="top of mind" />
+                    <label for="top of mind">top of mind</label>
                     <br>
-                    <label for="thoughtFrame">frame</label>
+                    <input type="radio" name="thoughtLocation" id="front and center" value="front and center" />
+                    <label for="front and center">front and center</label>
                     <br>
-                    <input type="text" name="thoughtFrame" id="thoughtFrame" />
+                    <input type="radio" name="thoughtLocation" id="bottom line" value="bottom line" />
+                    <label for="bottom line">bottom line</label>
+                    <br>
+                    <label for="thoughtFrame"><b>frame</b></label>
+                    <br>
+                    <input type="radio" name="thoughtFrame" id="love" value="love" />
+                    <label for="love">love</label>
+                    <br>
+                    <input type="radio" name="thoughtFrame" id="live" value="live" />
+                    <label for="live">live</label>
+                    <br>
+                    <input type="radio" name="thoughtFrame" id="learn" value="learn" />
+                    <label for="learn">learn</label>
+                    <br>
+                    <input type="radio" name="thoughtFrame" id="earn" value="earn" />
+                    <label for="earn">earn</label>
                     <br>
                     <input type="submit" value="contemplate thought" />
                     <br>
@@ -71,15 +88,15 @@
                 <!-- vibe form begin -->
                 <h3>Send</h3>
                 <form action="vibe" method="POST">
-                    <label for="vibeTldr">tldr</label>
+                    <label for="vibeTldr"><b>tldr</b></label>
                     <br>
                     <input type="text" name="vibeTldr" id="vibeTldr" />
                     <br>
-                    <label for="vibeSoulId">soul</label>
+                    <label for="vibeSoulId"><b>soul</b></label>
                     <br>
                     <input type="text" name="vibeSoulId" id="vibeSoulId" />
                     <br>
-                    <label for="vibePurpose">purpose</label>
+                    <label for="vibePurpose"><b>purpose</b></label>
                     <br>
                     <input type="text" name="vibePurpose" id="vibePurpose" />
                     <br>
@@ -92,7 +109,7 @@
                 <!-- soul form begin -->
                 <h3>Touch</h3>
                 <form action="soul" method="POST">
-                    <label for="soulName">name</label>
+                    <label for="soulName"><b>name</b></label>
                     <br>
                     <input type="text" name="soulName" id="soulName" />
                     <br>
@@ -107,12 +124,12 @@
             <div class="col-md-4">
                 <h3>Remember</h3>
                 <!-- thought datatable implementation start  -->
-                <table class="display" id="thoughts">
+                <table class="display table" id="thoughts">
                     <thead>
                         <tr>
-                            <th>THOUGHT-ID</th>
+                            <th>THOUGHT</th>
                             <th>TLDR</th>
-                            <th>VIBE-ID</th>
+                            <th>VIBE</th>
                             <th>LOCATION</th>
                             <th>FRAME</th>
                         </tr>
@@ -124,11 +141,13 @@
             <div class="col-md-4">
                 <h3>Feel</h3>
                 <!-- vibe datatable implementation start  -->
-                <table class="display" id="vibes">
+                <table class="display table" id="vibes">
                     <thead>
                         <tr>
-                            <th>VIBE-ID</th>
+                            <th>VIBE</th>
                             <th>TLDR</th>
+                            <th>SOUL</th>
+                            <th>PURPOSE</th>
                         </tr>
                     </thead>
                     <tbody id="vibeTable" class="dataTab"></tbody>
@@ -138,10 +157,10 @@
             <div class="col-md-4">
                 <h3>Observe</h3>
                 <!-- soul datatable implementation start -->
-                <table class="display" id="souls">
+                <table class="display table" id="souls">
                     <thead>
                         <tr>
-                            <th>SOUL-ID</th>
+                            <th>SOUL</th>
                             <th>NAME</th>
                         </tr>
                     </thead>
@@ -155,13 +174,20 @@
             <div class="col-md-4">
                 <h3>Move</h3>
                 <form action="thought/move" method="POST">
-                    <label for="thoughtId">id</label>
+                    <label for="thoughtId"><b>id</b></label>
                     <br>
                     <input type="text" name="thoughtId" id="thoughtId" />
                     <br>
-                    <label for="thoughtLocation">location</label>
+                    <label for="thoughtLocation"><b>location</b></label>
                     <br>
-                    <input type="text" name="thoughtLocation" id="thoughtLocation" />
+                    <input type="radio" name="thoughtLocation" id="top of mind" value="top of mind" />
+                    <label for="top of mind">top of mind</label>
+                    <br>
+                    <input type="radio" name="thoughtLocation" id="front and center" value="front and center" />
+                    <label for="front and center">front and center</label>
+                    <br>
+                    <input type="radio" name="thoughtLocation" id="bottom line" value="bottom line" />
+                    <label for="bottome line">bottom line</label>
                     <br>
                     <input type="submit" value="move thought" />
                     <br>
@@ -170,11 +196,11 @@
             <div class="col-md-4">
                 <h3>Change</h3>
                 <form action="vibe/change" method="POST">
-                    <label for="vibeId">id</label>
+                    <label for="vibeId"><b>id</b></label>
                     <br>
                     <input type="text" name="vibeId" id="vibeId" />
                     <br>
-                    <label for="vibeTldr">tldr</label>
+                    <label for="vibeTldr"><b>tldr</b></label>
                     <br>
                     <input type="text" name="vibeTldr" id="vibeTldr" />
                     <br>
@@ -188,7 +214,7 @@
             <div class="col-md-4">
                 <h3>Forget</h3>
                 <form action="thought/delete" method="POST">
-                    <label for="thoughtId">id</label>
+                    <label for="thoughtId"><b>id</b></label>
                     <br>
                     <input type="text" name="thoughtId" id="thoughtId" />
                     <br>
@@ -199,7 +225,7 @@
             <div class="col-md-4">
                 <h3>Cancel</h3>
                 <form action="vibe/delete" method="POST">
-                    <label for="vibeId">id</label>
+                    <label for="vibeId"><b>id</b></label>
                     <br>
                     <input type="text" name="vibeId" id="vibeId" />
                     <br>

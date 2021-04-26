@@ -3,26 +3,67 @@
 A Java 8 backend web API and ES6+ HTML/JS web interface with a PostgreSQL database. Submit a README.md with a proposal that matches as many requirements as manageable below. You may use the example proposal below for reference, or as your project itself.
 Tools & APIs
 
-    - [x] Agile User Stories
-    - [x] Java SE 8
-    - [x] Gradle
-    - [x] JDBC
-    - [x] PostgreSQL
-    - [x] JavaEE Servlet
-    - [x] HTML/JS/CSS
-    - [x] AJAX/Fetch
-    - [ ] JUnit
-    - [x] log4j or similar
-    - [ ] Jest or similar JS testing framework
-    - [ ] Optional:
-        - [x] Docker, Docker-Compose
-        - [ ] React
-        - [x] Bootstrap
-        - [ ] Remote hosting (AWS EC2/RDS)
-        - [ ] Jenkins CI automation
-        - [ ] Mockito
+- [x] Agile User Stories
+- [x] Java SE 8
+- [x] Gradle
+- [x] JDBC
+- [x] PostgreSQL
+- [x] JavaEE Servlet
+- [x] HTML/JS/CSS
+- [x] AJAX/Fetch
+- [ ] JUnit
+- [x] log4j or similar
+- [ ] Jest or similar JS testing framework
+- [ ] Optional:
+    - [x] Docker, Docker-Compose
+    - [ ] React
+    - [x] Bootstrap
+    - [ ] Remote hosting (AWS EC2/RDS)
+    - [ ] Jenkins CI automation
+    - [ ] Mockito   
+
+## Architecture
+
+  - [ ] Anemic/DDD OR n-tier package & class structure
+  - [ ] Design Patterns:
+      - [ ] Dependency Injection
+      - [x] Data Access Object
+      - [ ] Business Delegate
+      - [ ] Model-View-Controller
+      - [ ] Front Controller
+  - [x] SQL Normalization (3rd form)
+  - [x] PL/pgSQL
+  - [ ] Optional:
+      - [ ] Single Page Application
+
+## Functionality
+
+  - [x] CRUD - Create, Read, Update, Delete
+  - [x] Web App dashboard interface
+  - [x] Asynchronous interface updates
+  - [x] Login - Authentication & Authorization
+  - [x] Database persistance
+  - [x] Session management
+
+## Presentation
+
+  - [ ] Prepare a demonstration of functionality requirements through a browser
+  - [x] Prepare visual aides (slides) introducing the project requirements and features
 
 ## Roadmap
+
+### Typical Stops
+
+#### Brain Freeze Uploads 
+
+- image file location reference in database
+
+#### Perspective Changes
+- Perspective change via button
+- Reflective perspective: inward-facing view with additional thought features
+- Expressive perspective: outward-facing view with additional vibe and soul features
+- Improved Headspace view: consolidate data via sql views
+- CRUD Operations view button on table row
 
 ### Highlight Destination
 
@@ -31,60 +72,32 @@ Tools & APIs
 - feed(Crumbs)
 - make(Slice slice = new Wisdom())
 
-## Architecture
-
-    - [ ] Anemic/DDD OR n-tier package & class structure
-    - [ ] Design Patterns:
-        - [ ] Dependency Injection
-        - [x] Data Access Object
-        - [ ] Business Delegate
-        - [ ] Model-View-Controller
-        - [ ] Front Controller
-    - [x] SQL Normalization (3rd form)
-    - [x] PL/pgSQL
-    - [ ] Optional:
-        - [ ] Single Page Application
-
-## Functionality
-
-    - [x] CRUD - Create, Read, Update, Delete
-    - [x] Web App dashboard interface
-    - [x] Asynchronous interface updates
-    - [x] Login - Authentication & Authorization
-    - [x] Database persistance
-    - [x] Session management
-
-## Presentation
-
-    - [ ] Prepare a demonstration of functionality requirements through a browser
-    - [x] Prepare visual aides (slides) introducing the project requirements and features
-
 ## User Stories
 
-    As a ghuD Person, I can...
-        - [x] login to my ghuD so that
-        - [x] view my Headspace so that
-        - [x] logout of my ghuD so that
-        - [x] create a Thought so that
-        - [x] forget a Thought so that
-        - [x] update a Thought so that
-        - [ ] upload a Brain Freeze so that I can build my Muse so that
-        - [ ] view an individual Brain Freeze so that
-        - [ ] view my Muse- my collection of Brain Freezes so that
-        - [ ] view my Scoop- my story for the day so that
-        - [ ] can write my Scoop so that
-        - [ ] receive an emailed Scoop so that
+As a ghuD Person, I can...
+    - [x] login to my ghuD so that
+    - [x] view my Headspace so that
+    - [x] logout of my ghuD so that
+    - [x] create a Thought so that
+    - [x] forget a Thought so that
+    - [x] update a Thought so that
+    - [ ] upload a Brain Freeze so that I can build my Muse so that
+    - [ ] view an individual Brain Freeze so that
+    - [ ] view my Muse- my collection of Brain Freezes so that
+    - [ ] view my Scoop- my story for the day so that
+    - [ ] can write my Scoop so that
+    - [ ] receive an emailed Scoop so that
 
-    As a ghuD Friend, I can...
-        - [ ] change my Perspective from Refelctive to Expressive so that
-        - [ ] change my Perspective from Expressive to Refelctive so that
-        - [x] view my collection of Souls so that
-        - [x] create a Vibe so that
-        - [x] cancel a Vibe so that
-        - [x] update a Vibe so that
-        - [x] view all Vibes so that
-        - [ ] view a Brain Freeze of a Soul so that
-        - [ ] view a Wavelength of Vibes between myself and a Soul so that
+As a ghuD Friend, I can...
+    - [ ] change my Perspective from Refelctive to Expressive so that
+    - [ ] change my Perspective from Expressive to Refelctive so that
+    - [x] view my collection of Souls so that
+    - [x] create a Vibe so that
+    - [x] cancel a Vibe so that
+    - [x] update a Vibe so that
+    - [x] view all Vibes so that
+    - [ ] view a Brain Freeze of a Soul so that
+    - [ ] view a Wavelength of Vibes between myself and a Soul so that
 
 ## Glossary
 
@@ -96,17 +109,17 @@ A system for tackling the quotidian- the day-to-day data... for the day. Optimal
 
 #### Frames Of Mind
 
-    Love
-    Live
-    Learn
-    Earn
+Love
+Live
+Learn
+Earn
 
 #### Headspace Locations
 
-    Top Of Mind
-    Front And Center
-    Bottom Line
-    Forgotten
+Top Of Mind
+Front And Center
+Bottom Line
+Forgotten
 
 #### ghuD
 
@@ -124,8 +137,8 @@ May be likened to a Kanban filled with Thoughts- consider using Headspace Locati
 
 ##### Suggested readings:
 
-    The Phoenix Project
-    The Goal
+The Phoenix Project
+The Goal
 
 #### Thought
 
@@ -147,56 +160,10 @@ A collection of Brain Freezes From Wikipedia: The word muse is also sometimes us
 
 A person or Person that is not oneself.
 
-    You don't have a soul, Doctor. You are a soul. You have a body, temporarily.
+You don't have a soul, Doctor. You are a soul. You have a body, temporarily.
 
 #### Scoop
 
 A summary of your Headspace
 
 #### Friend
-
-### Tech Stack
-
-#### JavaSerlvet
-
-Servlet: Java class that generates static webpages with dynamic data
-
-Performed tasks:
-
-    takes incoming request
-    processes request
-    generates response
-    sends response to user
-
-HttpServlet example:
-
-    takes HTTP request
-    processes headers and contet
-    writes HTML, CSS and JS into an HTTP response
-    Sends response to user's web browser
-
-Servlet container: Component of an application server that interacts with Java servlets
-
-    manages execution of servlets and Jakarta Server Pages (JSP) pages for Java apps
-        JSPs = dynamically generated web pages
-
-User  -->  HTTP Request  -->   Application Server  -->  Servlet Container  
-                                                               |
-                                                               V   
-User  <--  HTTP Response  <--  Application Server    <--   Servlet(s)  
-
-servlets-flowchart
-JavaServlet References
-
-Java Servlet Technology Overview Introduction to Servlets - Video Tutorial Servlet Documentation - Oracle
-
-#### Apache Tomcat
-
-Application server: Runs servlet and JSP-based web apps
-
-    Open-source implementation of the Java Servlet, JSPs, Java Expression Language and WebSocket technologies.
-    default port = 8080
-
-Apache Tomcat References
-
-Apache Tomcat 9 Docs Apache Tomcat 9 Configuration Reference

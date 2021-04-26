@@ -93,7 +93,7 @@ public class DaoImplVibe implements DaoVibe {
 
     try {
       LOGGER.info("executing database update");
-      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE vibe SET tldr = ? WHERE id = ?");
+      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE vibe SET vibeTldr = ? WHERE vibeId = ?");
       preparedStatement.setString(1, vibeTldr);
       preparedStatement.setInt(2, vibeId);
       preparedStatement.executeUpdate();
